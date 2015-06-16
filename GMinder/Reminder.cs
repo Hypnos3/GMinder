@@ -328,6 +328,10 @@ namespace ReflectiveCode.GMinder
         {
             reminderFormTableLayoutPanel.SuspendLayout();
 
+            snoozeMenu.Items.Clear();
+            snoozeLengthInteger.Minimum = 1;
+            CheckButtons();
+
             if (gvent != null)
             {
                 // Title
@@ -360,6 +364,25 @@ namespace ReflectiveCode.GMinder
 
                 // Location
                 eventWhere.Text = gvent.Location;
+
+                //get Minimum
+                int minutes = (int)Math.Truncate(( Selected.Start - DateTime.Now ).TotalMinutes);
+                if (minutes > 1) {
+                    snoozeLengthInteger.Minimum = ( minutes * -1 );
+
+                    //Snooze Helper menu
+                    snoozeMenu.Items.Clear();
+                    if (minutes > 5)
+                        addSnoozeMenuItem(5);
+                    if (minutes > 10)
+                        addSnoozeMenuItem(10);
+                    if (minutes > 15)
+                        addSnoozeMenuItem(15);
+                    if (minutes > 30)
+                        addSnoozeMenuItem(30);
+                    if (minutes > 60)
+                        addSnoozeMenuItem(60);
+                }
             }
             else
             {
@@ -371,8 +394,21 @@ namespace ReflectiveCode.GMinder
             reminderFormTableLayoutPanel.ResumeLayout();
         }
 
+        private void addSnoozeMenuItem(int minutes)
+        {
+            ToolStripMenuItem item = new ToolStripMenuItem(string.Format("{0} min before start", minutes),null,HandleSnoozeMenuItemClick);
+            item.Tag = minutes * -1;
+            snoozeMenu.Items.Add(item);
+        }
         #endregion
 
+
+        #region Update Display
+        private void CheckButtons()
+        {
+            this.snoozeButton.Enabled = ( snoozeLengthInteger.Value != 0 );
+        }
+        #endregion
 
         private void HandleOpenButton(object sender, EventArgs e)
         {
@@ -392,11 +428,43 @@ namespace ReflectiveCode.GMinder
                 HandleSnoozeButton(sender, e);
         }
 
+        private void HandleSnoozeMenuButton( object sender, EventArgs e )
+        {
+            throw new NotImplementedException("Not implemented");
+        }
+
+        private void HandleSnoozeMenuItemClick( object sender, EventArgs e )
+        {
+            ToolStripMenuItem item = ( sender as ToolStripMenuItem );
+            snoozeLengthInteger.Value = (int)( item.Tag ?? 1 );
+        }
+
         private void HandleSnoozeButton(object sender, EventArgs e)
         {
-            snoozeTimer.Interval = snoozeLengthInteger.Value * ONE_MINUTE;
+            int snoozeLength = snoozeLengthInteger.Value;
+            if (snoozeLength == 0) {
+                return;
+            } else if (snoozeLength < 0) {
+                snoozeLength = Math.Abs(snoozeLength);
+
+                if (Selected != null) {
+                    int dif = (int)Math.Truncate(( Selected.Start - DateTime.Now ).TotalMinutes);
+                    if (snoozeLength >= dif)
+                        snoozeLength = dif;
+                    else
+                        snoozeLength = dif - snoozeLength;
+                    MessageBox.Show(string.Format("{0} Minutes now to time; snooze for {1} Minutes", dif, snoozeLength));
+                }
+            }
+
+            snoozeTimer.Interval = snoozeLength * ONE_MINUTE;
             snoozeTimer.Start();
             Hidden = true;
+        }
+
+        private void HandleSnoozeLengthIntegerChanged( object sender, EventArgs e )
+        {
+            CheckButtons();
         }
 
         private void HandleSnoozeTimerTick(object sender, EventArgs e)

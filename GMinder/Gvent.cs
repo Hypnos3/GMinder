@@ -119,6 +119,33 @@ namespace ReflectiveCode.GMinder
             }
         }
 
+        private string _Description;
+        public string Description
+        {
+            get { return _Description; }
+            set
+            {
+                if (_Description != value) {
+                    _Description = value;
+                    NotifyChange(new GventEventArgs(this, GventChanges.Description));
+                }
+            }
+        }
+
+        private string _Organizer;
+        public string Organizer
+        {
+            get { return _Organizer; }
+            set
+            {
+                if (_Organizer != value) {
+                    _Organizer = value;
+                    NotifyChange(new GventEventArgs(this, GventChanges.Organizer));
+                }
+            }
+        }
+        
+
         private GventStatus _Status;
         public GventStatus Status
         {
@@ -237,6 +264,12 @@ namespace ReflectiveCode.GMinder
 
             // Location
             Location = entry.Location;
+
+            //Description
+            Description = entry.Description;
+
+            //Organizer
+            Organizer = string.Format("{0} <{1}>",entry.Organizer.DisplayName,entry.Organizer.Email);
 
             // Times
 

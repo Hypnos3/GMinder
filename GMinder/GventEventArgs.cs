@@ -55,6 +55,8 @@ namespace ReflectiveCode.GMinder
         Added = 128,
         Deleted = 256,
         AddedReminder = 512,
-        DeletedReminder = 1024
+        DeletedReminder = 1024,
+        Description = 2048,
+        Organizer = 4096
     }
 }

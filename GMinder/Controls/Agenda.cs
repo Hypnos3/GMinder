@@ -340,6 +340,8 @@ namespace ReflectiveCode.GMinder.Controls
 
                 case GventChanges.Color:
                 case GventChanges.Title:
+                case GventChanges.Description:
+                case GventChanges.Organizer:
                     if (_Gvents.ContainsKey(gvent))
                         ItemUpdate(_Gvents[gvent]);
                     return;
@@ -360,6 +362,7 @@ namespace ReflectiveCode.GMinder.Controls
                 Gvent gvent = item.Tag as Gvent;
 
                 item.Text = gvent.Title;
+                item.ToolTipText = gvent.Description;
 
                 string time;
                 if (!gvent.AllDay)

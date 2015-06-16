@@ -54,6 +54,7 @@ namespace ReflectiveCode.GMinder
             this.openButton = new System.Windows.Forms.Button();
             this.dismissButton = new System.Windows.Forms.Button();
             this.snoozeLengthInteger = new ReflectiveCode.GMinder.Controls.IntegerUpDown();
+            this.snoozeMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.snoozeButton = new System.Windows.Forms.Button();
             this.hideButton = new System.Windows.Forms.Button();
             this.minuteTimer = new System.Windows.Forms.Timer(this.components);
@@ -291,6 +292,7 @@ namespace ReflectiveCode.GMinder
             // snoozeLengthInteger
             // 
             this.snoozeLengthInteger.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.snoozeLengthInteger.ContextMenuStrip = this.snoozeMenu;
             this.snoozeLengthInteger.Location = new System.Drawing.Point(292, 6);
             this.snoozeLengthInteger.Maximum = new decimal(new int[] {
             1440,
@@ -306,13 +308,20 @@ namespace ReflectiveCode.GMinder
             this.snoozeLengthInteger.Size = new System.Drawing.Size(60, 20);
             this.snoozeLengthInteger.TabIndex = 3;
             this.snoozeLengthInteger.Value = 10;
+            this.snoozeLengthInteger.ValueChanged += new System.EventHandler(this.HandleSnoozeLengthIntegerChanged);
             this.snoozeLengthInteger.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleSnoozeKeyPress);
+            // 
+            // snoozeMenu
+            // 
+            this.snoozeMenu.Name = "snoozeMenu";
+            this.snoozeMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // snoozeButton
             // 
             this.snoozeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.snoozeButton.AutoSize = true;
             this.snoozeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.snoozeButton.ContextMenuStrip = this.snoozeMenu;
             this.snoozeButton.Location = new System.Drawing.Point(358, 3);
             this.snoozeButton.Name = "snoozeButton";
             this.snoozeButton.Size = new System.Drawing.Size(53, 23);
@@ -398,6 +407,7 @@ namespace ReflectiveCode.GMinder
         private Controls.IntegerUpDown snoozeLengthInteger;
         private System.Windows.Forms.Button snoozeButton;
         private System.Windows.Forms.Button hideButton;
+        private System.Windows.Forms.ContextMenuStrip snoozeMenu;
     }
 }
 

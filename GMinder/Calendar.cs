@@ -67,11 +67,11 @@ namespace ReflectiveCode.GMinder
                 }
 
                 var authorizeTask = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                GMinderClientSecrets.getSecret(),
-                new[] { CalendarService.Scope.Calendar },
-                "user",
-                CancellationToken.None,
-                fileDataStore);
+                        GMinderClientSecrets.getSecret(),
+                        new[] { CalendarService.Scope.Calendar },
+                        "user",
+                        CancellationToken.None,
+                        fileDataStore);
 
                 Task.WaitAny(new Task[] { authorizeTask }, 60000);
                 if (!authorizeTask.IsCompleted)
