@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace ReflectiveCode.GMinder.Controls
 {
@@ -12,16 +14,18 @@ namespace ReflectiveCode.GMinder.Controls
         private Dictionary<string, ListViewGroup> _Groups = new Dictionary<string, ListViewGroup>();
         private Dictionary<DateTime, ListViewItem> _Headers = new Dictionary<DateTime, ListViewItem>();
         private Dictionary<Gvent, ListViewItem> _Gvents = new Dictionary<Gvent, ListViewItem>();
+        private Point LastMousePos = new Point(-1, -1);
+        private ToolTip toolTip;
 
         delegate void BeginUpdateCallback();
         delegate void EndUpdateCallback();
 
         public Agenda()
         {
-            _WhatColumn.Text = "What";
+            _WhatColumn.Text = Properties.Resources.AgendaColumnWhat;
             _WhatColumn.TextAlign = HorizontalAlignment.Left;
 
-            _WhenColumn.Text = "When";
+            _WhenColumn.Text = Properties.Resources.AgendaColumnWhen;
             _WhenColumn.TextAlign = HorizontalAlignment.Right;
 
             Columns.AddRange(new ColumnHeader[] { _WhatColumn, _WhenColumn });
@@ -33,6 +37,11 @@ namespace ReflectiveCode.GMinder.Controls
             View = View.Details;
             ListViewItemSorter = new AgendaComparer();
             ForeColor = Color.Black;
+            //ShowItemToolTips = true;
+            toolTip = new ToolTip();
+            toolTip.IsBalloon = true;
+
+            this.MouseMove += MouseMoveHandler;
 
             Schedule.Current.Redrawing += RedrawingHandler;
             Schedule.Current.BeginningUpdate += BeginningUpdateHandler;
@@ -72,6 +81,25 @@ namespace ReflectiveCode.GMinder.Controls
         public void GventChangedHandler(object sender, GventEventArgs e)
         {
             UpdateGvent(e.Gvent, e.Changes);
+        }
+
+        private void MouseMoveHandler(object sender, MouseEventArgs e)
+        {
+            if (LastMousePos == e.Location)
+                return;
+
+            ListViewItem item = this.GetItemAt(e.X, e.Y);
+
+            if ((item != null) && (!string.IsNullOrEmpty(item.ToolTipText)))
+            {
+                LastMousePos = e.Location;
+                toolTip.ToolTipTitle = item.Text;
+                toolTip.Show(item.ToolTipText, this, e.Location);
+            }
+            else
+            {
+                toolTip.Hide(this);
+            }
         }
 
         /// <summary>
@@ -362,7 +390,6 @@ namespace ReflectiveCode.GMinder.Controls
                 Gvent gvent = item.Tag as Gvent;
 
                 item.Text = gvent.Title;
-                item.ToolTipText = gvent.Description;
 
                 string time;
                 if (!gvent.AllDay)
@@ -393,6 +420,8 @@ namespace ReflectiveCode.GMinder.Controls
                         item.BackColor = Properties.Settings.Default.PastColor;
                         break;
                 }
+
+                item.ToolTipText = gvent.ToolTip;
             }
         }
 
@@ -403,21 +432,21 @@ namespace ReflectiveCode.GMinder.Controls
             int months = (time.Year * 12 + time.Month) - (DateTime.Today.Year * 12 + DateTime.Today.Month);
 
             if (days < 0)
-                return "Past";
+                return Properties.Resources.AgendaGroupPast;
             if (days == 0)
-                return "Today";
+                return Properties.Resources.AgendaGroupToday;
             if (days == 1)
-                return "Tomorrow";
+                return Properties.Resources.AgendaGroupTomorrow;
             if (weeks == 0)
-                return String.Format("{0} Days", days);
+                return String.Format(Properties.Resources.AgendaGroupDays, days);
             if (weeks == 1)
-                return "Next Week";
+                return Properties.Resources.AgendaGroupNextWeek;
             if (months == 0)
-                return String.Format("{0} Weeks", weeks);
+                return String.Format(Properties.Resources.AgendaGroupWeeks, weeks);
             if (months == 1)
-                return String.Format("Next Month");
+                return String.Format(Properties.Resources.AgendaGroupNextMonth);
 
-            return String.Format("{0} Months", months);
+            return String.Format(Properties.Resources.AgendaGroupMonths, months);
         }
 
         public Gvent Selected
@@ -512,6 +541,8 @@ namespace ReflectiveCode.GMinder.Controls
             Schedule.Current.GventAdded -= GventAddedHandler;
             Schedule.Current.GventRemoved -= GventRemovedHandler;
             Schedule.Current.GventChanged -= GventChangedHandler;
+
+            this.MouseMove -= MouseMoveHandler;
 
             base.Dispose(disposing);
         }

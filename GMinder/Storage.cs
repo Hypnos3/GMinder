@@ -25,6 +25,7 @@
 using System;
 using System.IO;
 using System.IO.IsolatedStorage;
+using System.Reflection;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
@@ -38,6 +39,9 @@ namespace ReflectiveCode.GMinder
     {
         public static void AppendText(string path, string text)
         {
+#if DEBUG
+            Console.WriteLine(text);
+#endif
             using (var stream = new IsolatedStorageFileStream(path, FileMode.Append))
             {
                 using (var writer = new StreamWriter(stream))
@@ -45,10 +49,14 @@ namespace ReflectiveCode.GMinder
                     writer.WriteLine(text);
                     writer.Flush();
                 }
+#if DEBUG
+                Console.WriteLine("saved to:");
+                Console.WriteLine(stream.GetType().GetField("m_FullPath", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(stream).ToString());
+#endif
             }
         }
 
-        public static string LoadText(string path, string text)
+        public static string LoadText(string path)
         {
             using (var stream = new IsolatedStorageFileStream(path, FileMode.OpenOrCreate))
             using (var reader = new StreamReader(stream))
@@ -73,6 +81,9 @@ namespace ReflectiveCode.GMinder
             {
                 storageFolder.Create();
             }
+#if DEBUG
+            Console.WriteLine("Writing File to {0}", Path.Combine(storageFolder.ToString(), path));
+#endif
             return Path.Combine(storageFolder.ToString(), path);
         }
 

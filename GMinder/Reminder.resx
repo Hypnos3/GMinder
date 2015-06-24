@@ -124,6 +124,63 @@
     <value>252, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="calendarsTrayMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="calendarsTrayMenuItem.Text" xml:space="preserve">
+    <value>Calendars</value>
+  </data>
+  <data name="optionsTrayMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="optionsTrayMenuItem.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="trayMenuToolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 6</value>
+  </data>
+  <data name="resetTrayMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="resetTrayMenuItem.Text" xml:space="preserve">
+    <value>Clear Events</value>
+  </data>
+  <data name="refreshTrayMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="refreshTrayMenuItem.Text" xml:space="preserve">
+    <value>Refresh Events</value>
+  </data>
+  <data name="addTrayMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="addTrayMenuItem.Text" xml:space="preserve">
+    <value>Add Event</value>
+  </data>
+  <data name="trayMenuToolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 6</value>
+  </data>
+  <data name="aboutTrayMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="aboutTrayMenuItem.Text" xml:space="preserve">
+    <value>About GMinder</value>
+  </data>
+  <data name="exitTrayMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 22</value>
+  </data>
+  <data name="exitTrayMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="trayMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 170</value>
+  </data>
+  <data name="&gt;&gt;trayMenu.Name" xml:space="preserve">
+    <value>trayMenu</value>
+  </data>
+  <data name="&gt;&gt;trayMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="trayIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -148,12 +205,368 @@
         AACAAwAA//8AAA==
 </value>
   </data>
+  <data name="trayIcon.Text" xml:space="preserve">
+    <value>GMinder</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="trayIcon.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <metadata name="calendarRefresher.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="reminderFormTableLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="reminderFormTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="eventText.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="eventText.AutoScrollMinSize" type="System.Drawing.Size, System.Drawing">
+    <value>453, 20</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="eventText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="eventText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="eventText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>453, 20</value>
+  </data>
+  <data name="eventText.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="eventText.Text" xml:space="preserve">
+    <value>No event selected</value>
+  </data>
+  <data name="&gt;&gt;eventText.Name" xml:space="preserve">
+    <value>eventText</value>
+  </data>
+  <data name="&gt;&gt;eventText.Type" xml:space="preserve">
+    <value>TheArtOfDev.HtmlRenderer.WinForms.HtmlPanel, HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;eventText.Parent" xml:space="preserve">
+    <value>reminderFormTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;eventText.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="agenda.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="agenda.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 26</value>
+  </data>
+  <data name="agenda.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="agenda.Size" type="System.Drawing.Size, System.Drawing">
+    <value>459, 333</value>
+  </data>
+  <data name="agenda.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;agenda.Name" xml:space="preserve">
+    <value>agenda</value>
+  </data>
+  <data name="&gt;&gt;agenda.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.Agenda, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;agenda.Parent" xml:space="preserve">
+    <value>reminderFormTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;agenda.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="newButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="newButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="newButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="newButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="newButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 23</value>
+  </data>
+  <data name="newButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="newButton.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="&gt;&gt;newButton.Name" xml:space="preserve">
+    <value>newButton</value>
+  </data>
+  <data name="&gt;&gt;newButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newButton.Parent" xml:space="preserve">
+    <value>reminderButtonsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;newButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="openButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="openButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="openButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="openButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="openButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 3</value>
+  </data>
+  <data name="openButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 23</value>
+  </data>
+  <data name="openButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="openButton.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="&gt;&gt;openButton.Name" xml:space="preserve">
+    <value>openButton</value>
+  </data>
+  <data name="&gt;&gt;openButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openButton.Parent" xml:space="preserve">
+    <value>reminderButtonsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;openButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="dismissButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="dismissButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="dismissButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="dismissButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dismissButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 3</value>
+  </data>
+  <data name="dismissButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 23</value>
+  </data>
+  <data name="dismissButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="dismissButton.Text" xml:space="preserve">
+    <value>Dismiss</value>
+  </data>
+  <data name="&gt;&gt;dismissButton.Name" xml:space="preserve">
+    <value>dismissButton</value>
+  </data>
+  <data name="&gt;&gt;dismissButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dismissButton.Parent" xml:space="preserve">
+    <value>reminderButtonsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;dismissButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="snoozeLengthInteger.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <metadata name="snoozeMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>700, 17</value>
   </metadata>
+  <data name="snoozeMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 4</value>
+  </data>
+  <data name="&gt;&gt;snoozeMenu.Name" xml:space="preserve">
+    <value>snoozeMenu</value>
+  </data>
+  <data name="&gt;&gt;snoozeMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="snoozeLengthInteger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>292, 6</value>
+  </data>
+  <data name="snoozeLengthInteger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="snoozeLengthInteger.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;snoozeLengthInteger.Name" xml:space="preserve">
+    <value>snoozeLengthInteger</value>
+  </data>
+  <data name="&gt;&gt;snoozeLengthInteger.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.IntegerUpDown, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;snoozeLengthInteger.Parent" xml:space="preserve">
+    <value>reminderButtonsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;snoozeLengthInteger.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="snoozeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="snoozeButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="snoozeButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="snoozeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="snoozeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>358, 3</value>
+  </data>
+  <data name="snoozeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 23</value>
+  </data>
+  <data name="snoozeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="snoozeButton.Text" xml:space="preserve">
+    <value>Snooze</value>
+  </data>
+  <data name="&gt;&gt;snoozeButton.Name" xml:space="preserve">
+    <value>snoozeButton</value>
+  </data>
+  <data name="&gt;&gt;snoozeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;snoozeButton.Parent" xml:space="preserve">
+    <value>reminderButtonsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;snoozeButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="hideButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="hideButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="hideButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="hideButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="hideButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>417, 3</value>
+  </data>
+  <data name="hideButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 23</value>
+  </data>
+  <data name="hideButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="hideButton.Text" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="&gt;&gt;hideButton.Name" xml:space="preserve">
+    <value>hideButton</value>
+  </data>
+  <data name="&gt;&gt;hideButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hideButton.Parent" xml:space="preserve">
+    <value>reminderButtonsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;hideButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 359</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>459, 29</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;reminderButtonsTableLayoutPanel.Name" xml:space="preserve">
+    <value>reminderButtonsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;reminderButtonsTableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reminderButtonsTableLayoutPanel.Parent" xml:space="preserve">
+    <value>reminderFormTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;reminderButtonsTableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="reminderButtonsTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="newButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="openButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="dismissButton" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="snoozeLengthInteger" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="snoozeButton" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="hideButton" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,Percent,100,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="reminderFormTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="reminderFormTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="reminderFormTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="reminderFormTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>459, 388</value>
+  </data>
+  <data name="reminderFormTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;reminderFormTableLayoutPanel.Name" xml:space="preserve">
+    <value>reminderFormTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;reminderFormTableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reminderFormTableLayoutPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;reminderFormTableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="reminderFormTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="eventText" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="agenda" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="reminderButtonsTableLayoutPanel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <metadata name="minuteTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>465, 17</value>
   </metadata>
@@ -163,6 +576,15 @@
   <metadata name="snoozeTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>579, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>459, 388</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAMDAAAAEAIABoJgAANgAAACAgAAABACAAKBEAAF4nAAAQEAAAAQAgAGgEAACGOAAAKAAAADAA
@@ -428,5 +850,101 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAA=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GMinder</value>
+  </data>
+  <data name="&gt;&gt;trayIcon.Name" xml:space="preserve">
+    <value>trayIcon</value>
+  </data>
+  <data name="&gt;&gt;trayIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarsTrayMenuItem.Name" xml:space="preserve">
+    <value>calendarsTrayMenuItem</value>
+  </data>
+  <data name="&gt;&gt;calendarsTrayMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optionsTrayMenuItem.Name" xml:space="preserve">
+    <value>optionsTrayMenuItem</value>
+  </data>
+  <data name="&gt;&gt;optionsTrayMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;trayMenuToolStripSeparator2.Name" xml:space="preserve">
+    <value>trayMenuToolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;trayMenuToolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;resetTrayMenuItem.Name" xml:space="preserve">
+    <value>resetTrayMenuItem</value>
+  </data>
+  <data name="&gt;&gt;resetTrayMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;refreshTrayMenuItem.Name" xml:space="preserve">
+    <value>refreshTrayMenuItem</value>
+  </data>
+  <data name="&gt;&gt;refreshTrayMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addTrayMenuItem.Name" xml:space="preserve">
+    <value>addTrayMenuItem</value>
+  </data>
+  <data name="&gt;&gt;addTrayMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;trayMenuToolStripSeparator1.Name" xml:space="preserve">
+    <value>trayMenuToolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;trayMenuToolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aboutTrayMenuItem.Name" xml:space="preserve">
+    <value>aboutTrayMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aboutTrayMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exitTrayMenuItem.Name" xml:space="preserve">
+    <value>exitTrayMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exitTrayMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarRefresher.Name" xml:space="preserve">
+    <value>calendarRefresher</value>
+  </data>
+  <data name="&gt;&gt;calendarRefresher.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minuteTimer.Name" xml:space="preserve">
+    <value>minuteTimer</value>
+  </data>
+  <data name="&gt;&gt;minuteTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;refreshTimer.Name" xml:space="preserve">
+    <value>refreshTimer</value>
+  </data>
+  <data name="&gt;&gt;refreshTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;snoozeTimer.Name" xml:space="preserve">
+    <value>snoozeTimer</value>
+  </data>
+  <data name="&gt;&gt;snoozeTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>GReminder</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

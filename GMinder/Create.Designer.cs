@@ -40,99 +40,62 @@
             // 
             // CreateFormTableLayout
             // 
-            this.CreateFormTableLayout.AutoSize = true;
-            this.CreateFormTableLayout.ColumnCount = 2;
-            this.CreateFormTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.CreateFormTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            resources.ApplyResources(this.CreateFormTableLayout, "CreateFormTableLayout");
             this.CreateFormTableLayout.Controls.Add(this.addButton, 1, 1);
             this.CreateFormTableLayout.Controls.Add(this.newEventNameTextBox, 0, 1);
             this.CreateFormTableLayout.Controls.Add(this.exampleLabel, 0, 0);
             this.CreateFormTableLayout.Controls.Add(this.calendarList, 0, 3);
             this.CreateFormTableLayout.Controls.Add(this.dtPicker, 0, 2);
-            this.CreateFormTableLayout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.CreateFormTableLayout.Location = new System.Drawing.Point(0, 0);
             this.CreateFormTableLayout.Name = "CreateFormTableLayout";
-            this.CreateFormTableLayout.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.CreateFormTableLayout.RowCount = 4;
-            this.CreateFormTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.CreateFormTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.CreateFormTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.CreateFormTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.CreateFormTableLayout.Size = new System.Drawing.Size(337, 98);
-            this.CreateFormTableLayout.TabIndex = 0;
             // 
             // addButton
             // 
-            this.addButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addButton.Location = new System.Drawing.Point(259, 21);
+            resources.ApplyResources(this.addButton, "addButton");
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 3;
-            this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.HandleAddButton);
             // 
             // newEventNameTextBox
             // 
-            this.newEventNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.newEventNameTextBox.Location = new System.Drawing.Point(3, 22);
+            resources.ApplyResources(this.newEventNameTextBox, "newEventNameTextBox");
             this.newEventNameTextBox.Name = "newEventNameTextBox";
-            this.newEventNameTextBox.Size = new System.Drawing.Size(250, 20);
-            this.newEventNameTextBox.TabIndex = 0;
             this.newEventNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleKeyPress);
             // 
             // exampleLabel
             // 
-            this.exampleLabel.AutoSize = true;
+            resources.ApplyResources(this.exampleLabel, "exampleLabel");
             this.CreateFormTableLayout.SetColumnSpan(this.exampleLabel, 2);
-            this.exampleLabel.Location = new System.Drawing.Point(3, 5);
             this.exampleLabel.Name = "exampleLabel";
-            this.exampleLabel.Size = new System.Drawing.Size(215, 13);
-            this.exampleLabel.TabIndex = 3;
-            this.exampleLabel.Text = "Example: Dinner with Michael 7pm tomorrow";
             // 
             // calendarList
             // 
-            this.calendarList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.calendarList, "calendarList");
             this.calendarList.BackColor = System.Drawing.SystemColors.Window;
             this.CreateFormTableLayout.SetColumnSpan(this.calendarList, 2);
             this.calendarList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.calendarList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.calendarList.FormatString = "{Name}";
             this.calendarList.FormattingEnabled = true;
-            this.calendarList.Location = new System.Drawing.Point(30, 76);
-            this.calendarList.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
             this.calendarList.Name = "calendarList";
-            this.calendarList.Size = new System.Drawing.Size(277, 21);
-            this.calendarList.TabIndex = 2;
             this.calendarList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.calendarList_DrawItem);
             // 
             // dtPicker
             // 
-            this.dtPicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.dtPicker, "dtPicker");
             this.dtPicker.Checked = false;
             this.CreateFormTableLayout.SetColumnSpan(this.dtPicker, 2);
-            this.dtPicker.Location = new System.Drawing.Point(30, 50);
-            this.dtPicker.Margin = new System.Windows.Forms.Padding(30, 3, 30, 3);
             this.dtPicker.Name = "dtPicker";
             this.dtPicker.ShowCheckBox = true;
-            this.dtPicker.Size = new System.Drawing.Size(277, 20);
-            this.dtPicker.TabIndex = 1;
             // 
             // Create
             // 
             this.AcceptButton = this.addButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 101);
             this.Controls.Add(this.CreateFormTableLayout);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Create";
-            this.Text = "Quick Add";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HandleKeyPress);
             this.CreateFormTableLayout.ResumeLayout(false);
             this.CreateFormTableLayout.PerformLayout();

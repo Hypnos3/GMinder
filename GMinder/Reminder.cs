@@ -22,15 +22,23 @@
 /// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 /// OF THE POSSIBILITY OF SUCH DAMAGE.
 
-using ReflectiveCode.GMinder.Properties;
 using System;
 using System.ComponentModel;
+using System.Drawing;
+using System.Web;
+using System.Linq;
 using System.Windows.Forms;
+using TheArtOfDev.HtmlRenderer.WinForms;
+using TheArtOfDev.HtmlRenderer.Core.Entities;
+using System.Text;
+using System.Collections.Generic;
 
 namespace ReflectiveCode.GMinder
 {
     public partial class GReminder : PositionalForm
     {
+        
+
         public const string REMINDER_TYPE_EMAIL = "email";
         public const string REMINDER_TYPE_SMS = "sms";
         public const string REMINDER_TYPE_POPUP = "popup";
@@ -39,6 +47,7 @@ namespace ReflectiveCode.GMinder
 
         private bool _UserExit;
         private bool _OptionsLock;
+        private ToolTip toolTip;
 
         private bool Hidden
         {
@@ -49,12 +58,32 @@ namespace ReflectiveCode.GMinder
                 {
                     if (value)
                     {
-                        Hide();
+                        if (InvokeRequired && IsHandleCreated)
+                        {
+                            Action action = delegate { this.Hide(); };
+                            this.Invoke(action);
+                        }
+                        else
+                        {
+                            this.Hide();
+                        }
                     }
                     else
                     {
-                        snoozeTimer.Stop();
-                        Show();
+                        if (InvokeRequired && IsHandleCreated)
+                        {
+                            Action action = delegate
+                            {
+                                snoozeTimer.Stop();
+                                Show();
+                            };
+                            this.Invoke(action);
+                        }
+                        else
+                        {
+                            snoozeTimer.Stop();
+                            Show();
+                        }
                     }
                 }
             }
@@ -75,6 +104,11 @@ namespace ReflectiveCode.GMinder
         public GReminder() : base("WindowSize", "WindowLocation")
         {
             InitializeComponent();            
+
+            //ToolTip
+            toolTip = new ToolTip();
+            toolTip.IsBalloon = true;
+            toolTip.ToolTipIcon = ToolTipIcon.Info;
 
             //Make sure we are not on top of any browser or dialog that happens during the authorzation
             Calendar.StartingAuth += (sender, args) => { this.TopMost = false; };
@@ -120,6 +154,11 @@ namespace ReflectiveCode.GMinder
             }
             base.OnFormClosing(e);
         }
+
+         private void OnFormRezize(object sender, EventArgs e)
+        {
+            eventTextRecalculateHeight();
+        }
 	
         #region Status Update
 
@@ -163,7 +202,6 @@ namespace ReflectiveCode.GMinder
 
 
         #region Calendar Refresh
-
         private void StartCalendarRefresher()
         {
             if (!calendarRefresher.IsBusy)
@@ -321,92 +359,170 @@ namespace ReflectiveCode.GMinder
         
         #endregion
 
+        #region eventText
+        private void eventTextRecalculateHeight()
+        {
+            if (eventText.AutoScrollMinSize.Height > (this.ClientSize.Height / 3))
+            {
+                eventText.Height = this.ClientSize.Height / 3;
+                eventText.Refresh();
+            }
+            else
+            {
+                eventText.Height = eventText.AutoScrollMinSize.Height;
+                eventText.Refresh();
+            }
+
+            
+        }
+
+        private void eventTextLinkClicked(object sender, TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(e.Link);
+                e.Handled = true;
+            }
+            catch (Exception ex)
+            {
+                Logging.LogException(true, ex, string.Format(Properties.Resources.ErrorOpenLink,e.Link));
+            }
+        }
+        #endregion
 
         #region Event Panel
 
-        private void DisplayEventDetails(Gvent gvent)
+        private void DisplayEventDetails( Gvent gvent )
         {
             reminderFormTableLayoutPanel.SuspendLayout();
-
+            eventText.SuspendLayout();
             snoozeMenu.Items.Clear();
-            snoozeLengthInteger.Minimum = 1;
-            CheckButtons();
+            StringBuilder sb = new StringBuilder();
 
-            if (gvent != null)
-            {
+            if (gvent != null) {
                 // Title
-                eventWhat.Text = gvent.Title;
+                sb.Append("<h3 style=\"display: inline\">");
+                if (string.IsNullOrEmpty(gvent.Url)) {
+                    sb.Append(gvent.Title);
+                }
+                else {
+                    sb.Append("<a href=\"");
+                    sb.Append(gvent.Url);
+                    sb.Append("\">");
+                    sb.Append(gvent.Title);
+                    sb.Append("</a>");
+                }
+                sb.Append("</h3>");
 
-                DateTime start = gvent.Start;
-                DateTime stop = gvent.Stop;
-                string when;
-
+                sb.Append("<br /><span style=\"font-size: small\">");
                 // Time
-                if (start.Date == stop.AddSeconds(-1).Date)
-                {
-                    if (start.Hour == 0 && start.Minute == 0 && stop.Hour == 0 && stop.Minute == 0)
-                        when = "{0:ddd}, {0:m}";
-                    else
-                        when = "{0:ddd}, {0:m} {0:t} - {1:t}";
-                }
-                else
-                {
-                    if (start.Hour == 0 && start.Minute == 0 && stop.Hour == 0 && stop.Minute == 0)
-                        when = "{0:ddd}, {0:m} - {1:ddd}, {1:m}";
-                    else
-                        when = "{0:ddd}, {0:m} {0:t} - {1:ddd}, {1:m} {1:t}";
-                }
-
-                when = String.Format(when, start, stop);
-                when = String.Format("{0}  ({1})", when, gvent.LengthString);
-                
-                eventWhen.Text =  when;
+                sb.Append(gvent.WhenString);
 
                 // Location
-                eventWhere.Text = gvent.Location;
+                if (gvent.LocationResource != null) {
+                    sb.Append("<br />");
+                    if (!string.IsNullOrEmpty(gvent.LocationResource.Url)) {
+                        sb.Append("<a href=\"");
+                        sb.Append(gvent.LocationResource.Url);
+                        sb.Append("\" Title=\"");
+                        sb.Append(gvent.LocationResource.Url);
+                        sb.Append("\">");
+                        sb.Append(gvent.LocationResource.DisplayName);
+                        sb.Append("</a>");
+                    }
+                    else
+                        sb.Append(gvent.LocationResource.DisplayName);
+                    sb.Append(gvent.LocationResource.Comment);
+                }
+                else if (!string.IsNullOrEmpty(gvent.Location)) {
+                    sb.Append("<br />");
+                    sb.Append("<a href=\"");
+                    sb.Append(string.Format(Properties.Resources.GoogleMapsLink, HttpUtility.UrlEncode(gvent.Location)));
+                    sb.Append("\" Title=\"Google Maps Link\">");
+                    sb.Append(gvent.Location);
+                    sb.Append("</a>");
+                }
+
+                if (gvent.Organizer != null && !gvent.Organizer.Self) {
+                    sb.Append("<br />");
+                    sb.Append(Properties.Resources.sOrganizer);
+                    sb.Append(": ");
+                    sb.Append(gvent.Organizer.Name);
+                }
+                sb.Append("</span>");
+
+                if (!string.IsNullOrEmpty(gvent.Description)) {
+                    sb.Append("<br /><span style=\"font-size: small\">");
+                    sb.Append(gvent.Description);
+                    sb.Append("</span>");
+                }
+
+
+                if ( gvent.Attendees.Count > 0 ) {
+                    sb.Append("<br /><span style=\"font-size: x-small\">");
+                    sb.Append(Properties.Resources.sAttendees);
+                    sb.Append(": ");
+
+                    foreach (var ev in gvent.Attendees) {
+                            if (ev.Optional)
+                                sb.Append("<i>");
+
+                            //sb.Append("<a heref=\"mailto:");
+                            //sb.Append(ev.Email);
+                            //sb.Append("\" Title=\"");
+                            if (!string.IsNullOrEmpty(ev.Url)) {
+                                sb.Append("<a heref=\"");
+                                sb.Append(ev.Url);
+                                sb.Append("\" Title=\"");
+                                sb.Append(ev.DisplayName);
+                                sb.Append("\">");
+                                sb.Append(ev.Name);
+                                sb.Append("</a>, ");
+                            }
+                            else
+                                sb.Append(ev.DisplayName);
+
+                            if (ev.Optional)
+                                sb.Append("</i>");
+                        }
+                    sb.Append("</span>");
+                }
+
+                // ToolTip
+                //toolTip.ToolTipTitle = gvent.Title;
+                //toolTip.SetToolTip(eventText, gvent.ToolTip);
+
+                eventText.Text = sb.ToString();
 
                 //get Minimum
                 int minutes = (int)Math.Truncate(( Selected.Start - DateTime.Now ).TotalMinutes);
                 if (minutes > 1) {
-                    snoozeLengthInteger.Minimum = ( minutes * -1 );
+                    for (int i = 1; i < 4; i++)
+                        addSnoozeMenuItem(minutes, 5 * i);
 
-                    //Snooze Helper menu
-                    snoozeMenu.Items.Clear();
-                    if (minutes > 5)
-                        addSnoozeMenuItem(5);
-                    if (minutes > 10)
-                        addSnoozeMenuItem(10);
-                    if (minutes > 15)
-                        addSnoozeMenuItem(15);
-                    if (minutes > 30)
-                        addSnoozeMenuItem(30);
-                    if (minutes > 60)
-                        addSnoozeMenuItem(60);
+                    for (int i = 1; i < 4; i++)
+                        addSnoozeMenuItem(minutes, 30 * i);
                 }
             }
-            else
-            {
-                eventWhat.Text = null;
-                eventWhen.Text = "No event selected";
-                eventWhere.Text = null;
-            }
+            else {
+                eventText.Text = Properties.Resources.EventNotSelectedText;
 
+                // ToolTip
+                //toolTip.ToolTipTitle = "";
+                //toolTip.SetToolTip(eventText, Properties.Resources.EventNotSelectedToolTip);
+            }
+            eventText.ResumeLayout();
+            eventTextRecalculateHeight();
             reminderFormTableLayoutPanel.ResumeLayout();
         }
 
-        private void addSnoozeMenuItem(int minutes)
+        private void addSnoozeMenuItem(int maxMinutes, int snoozeMinutes)
         {
-            ToolStripMenuItem item = new ToolStripMenuItem(string.Format("{0} min before start", minutes),null,HandleSnoozeMenuItemClick);
-            item.Tag = minutes * -1;
+            if (maxMinutes <= snoozeMinutes)
+                return;
+            ToolStripMenuItem item = new ToolStripMenuItem(string.Format(Properties.Resources.MenuItemSnoozeText, snoozeMinutes), null, HandleSnoozeMenuItemClick);
+            item.Tag = snoozeMinutes * -1;
             snoozeMenu.Items.Add(item);
-        }
-        #endregion
-
-
-        #region Update Display
-        private void CheckButtons()
-        {
-            this.snoozeButton.Enabled = ( snoozeLengthInteger.Value != 0 );
         }
         #endregion
 
@@ -428,43 +544,31 @@ namespace ReflectiveCode.GMinder
                 HandleSnoozeButton(sender, e);
         }
 
-        private void HandleSnoozeMenuButton( object sender, EventArgs e )
-        {
-            throw new NotImplementedException("Not implemented");
-        }
-
         private void HandleSnoozeMenuItemClick( object sender, EventArgs e )
         {
             ToolStripMenuItem item = ( sender as ToolStripMenuItem );
-            snoozeLengthInteger.Value = (int)( item.Tag ?? 1 );
+
+            int snoozeLength = (int)(item.Tag ?? 1);
+
+            if (Selected != null)
+            {
+                int dif = (int)Math.Truncate((Selected.Start - DateTime.Now).TotalMinutes);
+                if (snoozeLength >= dif)
+                    snoozeLength = dif;
+                else
+                    snoozeLength = dif - snoozeLength;
+
+                snoozeTimer.Interval = snoozeLength * ONE_MINUTE;
+                snoozeTimer.Start();
+                Hidden = true;
+            }
         }
 
         private void HandleSnoozeButton(object sender, EventArgs e)
         {
-            int snoozeLength = snoozeLengthInteger.Value;
-            if (snoozeLength == 0) {
-                return;
-            } else if (snoozeLength < 0) {
-                snoozeLength = Math.Abs(snoozeLength);
-
-                if (Selected != null) {
-                    int dif = (int)Math.Truncate(( Selected.Start - DateTime.Now ).TotalMinutes);
-                    if (snoozeLength >= dif)
-                        snoozeLength = dif;
-                    else
-                        snoozeLength = dif - snoozeLength;
-                    MessageBox.Show(string.Format("{0} Minutes now to time; snooze for {1} Minutes", dif, snoozeLength));
-                }
-            }
-
-            snoozeTimer.Interval = snoozeLength * ONE_MINUTE;
+            snoozeTimer.Interval = snoozeLengthInteger.Value * ONE_MINUTE;
             snoozeTimer.Start();
             Hidden = true;
-        }
-
-        private void HandleSnoozeLengthIntegerChanged( object sender, EventArgs e )
-        {
-            CheckButtons();
         }
 
         private void HandleSnoozeTimerTick(object sender, EventArgs e)
@@ -492,6 +596,7 @@ namespace ReflectiveCode.GMinder
             using (var about = new About())
                 about.ShowDialog(this);
         }
+
 
     }
 }

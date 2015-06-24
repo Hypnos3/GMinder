@@ -85,8 +85,9 @@ namespace ReflectiveCode.GMinder
         public void ProcessUpdates()
         {
             OnBeginningUpdate(new EventArgs());
-            foreach (var calendar in _Calendars.ToArray())
+            foreach (var calendar in _Calendars.ToArray()) {
                 calendar.ProcessUpdates();
+            }
             OnEndingUpdate(new EventArgs());
         }
 
@@ -180,7 +181,7 @@ namespace ReflectiveCode.GMinder
             }
             catch (Exception e)
             {
-                Logging.LogException(true, e, "Unable to load saved calendars and events");
+                Logging.LogException(true, e, Properties.Resources.ErrorCalendarEventsLoad);
             }
 
             if (calendars != null)
@@ -196,7 +197,7 @@ namespace ReflectiveCode.GMinder
             }
             catch (Exception e)
             {
-                Logging.LogException(true, e, "Unable to save calendars and events");
+                Logging.LogException(true, e, Properties.Resources.ErrorCalendarEventsSave);
             }
         }
 

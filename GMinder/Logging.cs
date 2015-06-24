@@ -47,8 +47,8 @@ namespace ReflectiveCode.GMinder
             foreach (string detail in details)
             {
                 logMessage.Append(prefix);
-                logMessage.AppendLine(detail);
                 prefix = "                      ";
+                logMessage.AppendLine(detail.Replace(Environment.NewLine, prefix + Environment.NewLine));
             }
 
             // Write exception message
@@ -84,7 +84,7 @@ namespace ReflectiveCode.GMinder
             // Display alert
             MessageBox.Show(
                 errorMessage.ToString(),
-                "Exception in GMinder",
+                Properties.Resources.ErrorGenericExceptionTitle,
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error
             );

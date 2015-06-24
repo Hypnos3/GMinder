@@ -35,10 +35,25 @@ namespace ReflectiveCode.GMinder
 
         #endregion
 
-        public GventEventArgs(Gvent gvent, GventChanges changes)
+        public GventEventArgs( Gvent gvent, GventChanges changes )
         {
             Gvent = gvent;
             Changes = changes;
+        }
+    }
+
+    public class GventAppendixEventArgs : GventEventArgs
+    {
+        #region Properties
+
+        public GventAppendix Appendix { get; private set; }
+
+        #endregion
+
+        public GventAppendixEventArgs( Gvent gvent, GventAppendix appendix, GventChanges changes )
+            : base(gvent, changes)
+        {
+            Appendix = appendix;
         }
     }
 
@@ -46,17 +61,26 @@ namespace ReflectiveCode.GMinder
     {
         None = 0,
         Title = 1,
-        Location = 2,
-        Start = 4,
-        Stop = 8,
-        Url = 16,
-        Status = 32,
-        Color = 64,
-        Added = 128,
-        Deleted = 256,
-        AddedReminder = 512,
-        DeletedReminder = 1024,
-        Description = 2048,
-        Organizer = 4096
+        Location = 1 << 1,
+        Start = 1 << 2,
+        Stop = 1 << 3,
+        Url = 1 << 4,
+        HangoutUrl = 1 << 5,
+        Status = 1 << 6,
+        Color = 1 << 7,
+        Added = 1 << 8,
+        Deleted = 1 << 9,
+        AddedReminder = 1 << 10,
+        DeletedReminder = 1 << 11,
+        Description = 1 << 12,
+        Organizer = 1 << 13,
+        IsRecurrence = 1 << 14,
+        Attendees = 1 << 15,
+        OptionalAttendees = 1 << 16,
+        Resources = 1 << 17,
+        LocationResource = 1 << 18,
+        AddedAppendix = 1 << 19,
+        DeletedAppendix = 1 << 20,
+        UpdatedAppendix = 1 << 21
     }
 }

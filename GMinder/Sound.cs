@@ -79,10 +79,7 @@ namespace ReflectiveCode.GMinder
                 }
                 catch (Exception e)
                 {
-                    Logging.LogException(true, e,
-                        String.Format("Error playing audio file: {0}", filename),
-                        "Please go to Options and select a valid sound file."
-                    );
+                    Logging.LogException(true, e, String.Format(Properties.Resources.ErrorSoundPlay, filename));
                 }
             }
         }

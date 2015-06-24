@@ -95,12 +95,12 @@ namespace ReflectiveCode.GMinder
             catch (Exception e)
             {
                 MessageBox.Show(
-                    "Can not access your Google Calendar account. Make sure you accept when asked to authorize GMinder.",
-                    "Can't access Google Calendar account",
+                    Properties.Resources.ErrorAccessGoogleCalendarText,
+                    Properties.Resources.ErrorAccessGoogleCalendarTitle,
                     System.Windows.Forms.MessageBoxButtons.OK
                 );
 
-                Logging.LogException(false, e, "Unknown Error: " + e.Message);
+                Logging.LogException(false, e, Properties.Resources.ErrorUnknown,e.Message);
                 return false;
             }
             finally
@@ -116,8 +116,8 @@ namespace ReflectiveCode.GMinder
             if (!Properties.Settings.Default.LoggedIn)
             {
                 MessageBox.Show(
-                    "You must first click on the Login button to allow GMinder access to your Google Calendar",
-                    "Login First",
+                    Properties.Resources.ErrorLoginFirstText,
+                    Properties.Resources.ErrorLoginFirstTitle,
                     System.Windows.Forms.MessageBoxButtons.OK
                 );
             }
@@ -129,11 +129,7 @@ namespace ReflectiveCode.GMinder
                 }
                 catch (Exception e)
                 {
-                    Logging.LogException(true, e,
-                        "Error downloading calendars",
-                        "Did you Accept GMinder's access to your Google Calendar account?",
-                        "Are you connected to the internet?"
-                    );
+                    Logging.LogException(true, e, Properties.Resources.ErrorDownloadCalendars);
                 }
             }
 
@@ -197,6 +193,7 @@ namespace ReflectiveCode.GMinder
 
         public bool DownloadError { get; set; }
 
+        public Action<GventAppendix> ProcessEventAppendix { get; set; }
         #endregion
 
         private Calendar(CalendarListEntry entry)

@@ -51,7 +51,7 @@ namespace ReflectiveCode.GMinder
         }
 
         private void SetLoginButtonText() {
-            loginButton.Text = Properties.Settings.Default.LoggedIn ? "Reset Login" : "Login";
+            loginButton.Text = Properties.Settings.Default.LoggedIn ? Properties.Resources.sResetLogin : Properties.Resources.sLogin;
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
@@ -96,22 +96,19 @@ namespace ReflectiveCode.GMinder
         private void loginSet_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                "A web browser will now be opened to allow you to accept giving GMinder access to your Calendar.",
-                "Login"
+                Properties.Resources.MessageLoginText,
+                Properties.Resources.MessageLoginTitle
             );
 
             if (Calendar.SetUserCredentials(true))
             {
-                //Clear calendars
-                foreach (var calendar in calendars) {
-                    RemoveCalendar(calendar);
-                }
-                calendarList.Items.Clear();
+                ClearCalendars();
 
                 SetLoginButtonText();
+				DownloadCalendars();
                 MessageBox.Show(
-                    "Your account information has been set. Click Download to import your calendars.",
-                    "Success"
+                    Properties.Resources.MessageLoginSuccessText,
+                    Properties.Resources.MessageLoginSuccessTitle
                 );
             }
         }
@@ -140,10 +137,20 @@ namespace ReflectiveCode.GMinder
             calendarList.EndUpdate();
         }
 
+        private void ClearCalendars()
+        {
+            //Clear calendars
+            foreach (var calendar in calendars) {
+                RemoveCalendar(calendar);
+            }
+            calendarList.Items.Clear();
+        }
+
         private void DownloadCalendars()
         {
-            calendarDownloadButton.Text = "Downloading";
+            calendarDownloadButton.Text = Properties.Resources.sDownloading;
             calendarDownloadButton.Enabled = false;
+			calendarClearButton.Enabled = false;
 
             foreach (var newCal in Calendar.DownloadCalendars())
             {
@@ -171,8 +178,9 @@ namespace ReflectiveCode.GMinder
                 }
             }
 
-            calendarDownloadButton.Text = "Download";
+            calendarDownloadButton.Text = Properties.Resources.sDownload;
             calendarDownloadButton.Enabled = true;
+			calendarClearButton.Enabled = true;
         }
 
         private ListViewItem GetSelectedItem()
@@ -289,6 +297,12 @@ namespace ReflectiveCode.GMinder
         private void calendarDownload_Click(object sender, EventArgs e)
         {
             DownloadCalendars();
+        }
+
+
+        private void calendarClear_Click( object sender, EventArgs e )
+        {
+            ClearCalendars();
         }
 
         private void calendarRemove_Click(object sender, EventArgs e)

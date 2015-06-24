@@ -27,9 +27,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+using System.Web;
 
 
 namespace ReflectiveCode.GMinder
@@ -119,6 +123,20 @@ namespace ReflectiveCode.GMinder
             }
         }
 
+        private string _HangoutUrl;
+        public string HangoutUrl
+        {
+            get { return _HangoutUrl; }
+            set
+            {
+                if (_HangoutUrl != value)
+                {
+                    _HangoutUrl = value;
+                    NotifyChange(new GventEventArgs(this, GventChanges.HangoutUrl));
+                }
+            }
+        }
+
         private string _Description;
         public string Description
         {
@@ -132,19 +150,71 @@ namespace ReflectiveCode.GMinder
             }
         }
 
-        private string _Organizer;
-        public string Organizer
+        private GventAppendix _Organizer;
+        public GventAppendix Organizer
         {
             get { return _Organizer; }
             set
             {
                 if (_Organizer != value) {
                     _Organizer = value;
-                    NotifyChange(new GventEventArgs(this, GventChanges.Organizer));
+                    NotifyChange(new GventAppendixEventArgs(this, Organizer, GventChanges.Organizer));
                 }
             }
         }
-        
+
+        private bool _IsRecurrence;
+        public bool IsRecurrence
+        {
+            get { return _IsRecurrence; }
+            set
+            {
+                if (_IsRecurrence != value) {
+                    _IsRecurrence = value;
+                    NotifyChange(new GventEventArgs(this, GventChanges.IsRecurrence));
+                }
+            }
+        }
+
+        private GventAppendix _LocationResource;
+        public GventAppendix LocationResource
+        {
+            get { return _LocationResource; }
+            set
+            {
+                if (_LocationResource != value) {
+                    _LocationResource = value;
+                    NotifyChange(new GventAppendixEventArgs(this, LocationResource, GventChanges.LocationResource));
+                }
+            }
+        }
+
+        private List<GventAppendix> _Attendees;
+        public List<GventAppendix> Attendees
+        {
+            get { return _Attendees; }
+            set
+            {
+                if (_Attendees != value) {
+                    _Attendees = value;
+                    NotifyChange(new GventEventArgs(this, GventChanges.Attendees));
+                }
+            }
+        }
+
+        private List<GventAppendix> _Resources;
+        public List<GventAppendix> Resources
+        {
+            get { return _Resources; }
+            set
+            {
+                if (_Resources != value)
+                {
+                    _Resources = value;
+                    NotifyChange(new GventEventArgs(this, GventChanges.Resources));
+                }
+            }
+        }
 
         private GventStatus _Status;
         public GventStatus Status
@@ -189,17 +259,21 @@ namespace ReflectiveCode.GMinder
                 int minutes = length.Minutes;
 
                 if (AllDay && days == 1)
-                    return "All day";
+                    return Properties.Resources.sAllDay;
 
                 StringBuilder result = new StringBuilder();
 
                 if (days > 0)
                 {
                     result.Append(days);
-                    if (days > 1)
-                        result.Append(" days");
-                    else
-                        result.Append(" day");
+                    if (days > 1) {
+                        result.Append(" ");
+                        result.Append(Properties.Resources.UnitDays);
+                    }
+                    else {
+                        result.Append(" ");
+                        result.Append(Properties.Resources.UnitDay);
+                    }
                 }
 
                 if (hours > 0)
@@ -207,7 +281,8 @@ namespace ReflectiveCode.GMinder
                     if (result.Length > 0)
                         result.Append(" ");
                     result.Append(hours);
-                    result.Append(" hr");
+                    result.Append(" ");
+                    result.Append(Properties.Resources.UnitHour);
                 }
 
                 if (minutes > 0)
@@ -215,25 +290,91 @@ namespace ReflectiveCode.GMinder
                     if (result.Length > 0)
                         result.Append(" ");
                     result.Append(minutes);
-                    result.Append(" min");
+                    result.Append(" ");
+                    result.Append(Properties.Resources.UnitMinute);
                 }
 
                 return result.ToString();
             }
         }
 
+        public string WhenString
+        {
+            get
+            {
+                DateTime start = Start;
+                DateTime stop = Stop;
+                string when;
+
+                // Time
+                if (start.Date == stop.AddSeconds(-1).Date) {
+                    if (start.Hour == 0 && start.Minute == 0 && stop.Hour == 0 && stop.Minute == 0)
+                        when = "{0:ddd}, {0:m} ({2})";
+                    else
+                        when = "{0:ddd}, {0:m} {0:t} - {1:t} ({2})";
+                }
+                else {
+                    if (start.Hour == 0 && start.Minute == 0 && stop.Hour == 0 && stop.Minute == 0)
+                        when = "{0:ddd}, {0:m} - {1:ddd}, {1:m} ({2})";
+                    else
+                        when = "{0:ddd}, {0:m} {0:t} - {1:ddd}, {1:m} {1:t} ({2})";
+                }
+
+                return String.Format(when, start, stop, LengthString);
+            }
+        }
+
+        public string ToolTip
+        {
+            get
+            {
+                StringBuilder sb = new StringBuilder();
+
+                if (!string.IsNullOrEmpty(Calendar.Name)) {
+                    sb.Append(Properties.Resources.sCalendar);
+                    sb.Append(": ");
+                    sb.AppendLine(Calendar.Name);
+                }
+
+                if (!string.IsNullOrEmpty(Location)) {
+                    sb.Append(Properties.Resources.sLocation);
+                    sb.Append(": ");
+                    sb.AppendLine(Location);
+                }
+
+                if (Organizer != null && !Organizer.Self)
+                {
+                    sb.Append(Properties.Resources.sOrganizer);
+                    sb.Append(": ");
+                    sb.AppendLine(Organizer.Name);
+                }
+
+                return sb.ToString();
+            }
+        }
         #endregion
 
-        public Gvent(Event entry, Calendar calendar)
+        #region Constructors
+        public Gvent(Calendar calendar) 
+        {
+            _Attendees = new List<GventAppendix>();
+            _Resources = new List<GventAppendix>();
+            this.Calendar = calendar;
+        }
+        //Func<string, string> GetLocationUrl
+
+        public Gvent( Event entry, Calendar calendar)
+            : this(calendar)
         {
             if (entry == null)
                 throw new ArgumentNullException("entry");
 
             _Id = entry.HtmlLink;
-            this.Calendar = calendar;
             Update(entry);
         }
+        #endregion
 
+        #region Methods
         public void Add(GVentMinder minder)
         {
             if (_Minders.Contains(minder))
@@ -254,22 +395,93 @@ namespace ReflectiveCode.GMinder
             NotifyChange(new GventEventArgs(this, GventChanges.DeletedReminder));
         }
 
-        public bool Update(Event entry)
+        public void AddResource(GventAppendix resource)
+        {
+             
+            if (_Resources.Contains(resource))
+                return;
+
+            resource.Gvent = this;
+            _Resources.Add(resource);
+            NotifyChange(new GventAppendixEventArgs(this, resource, GventChanges.AddedAppendix));
+        }
+
+        public void RemoveResource(GventAppendix resource)
+        {
+            if (!_Resources.Contains(resource))
+                return;
+
+            _Resources.Remove(resource);
+            NotifyChange(new GventAppendixEventArgs(this, resource, GventChanges.DeletedAppendix));
+        }
+
+        public void AddAttendee( GventAppendix attendee )
+        {
+            if (_Attendees.Contains(attendee))
+                return;
+            _Attendees.Add(attendee);
+            NotifyChange(new GventAppendixEventArgs(this, attendee, GventChanges.AddedAppendix));
+        }
+
+        public void RemoveAttendee( GventAppendix attendee )
+        {
+            if (!_Attendees.Contains(attendee))
+                return;
+            _Attendees.Remove(attendee);
+            NotifyChange(new GventAppendixEventArgs(this, attendee, GventChanges.DeletedAppendix));
+        }
+
+        public bool Update( Event entry )
         {
             if (entry.HtmlLink != Id)
                 return false;
 
-            Title = entry.Summary;
+            Title = (entry.Summary ?? string.Empty).Trim('\r', '\n', ' ');
             Url = entry.HtmlLink;
+            HangoutUrl = entry.HangoutLink;
 
             // Location
-            Location = entry.Location;
+            Location = ( entry.Location ?? string.Empty ).Trim('\r', '\n', ' ');
 
             //Description
-            Description = entry.Description;
+            Description = (entry.Description ?? string.Empty).Trim('\r', '\n', ' ');
+            if (!string.IsNullOrEmpty(Description))
+            {
+                string regex = @"((www\.|(http|https|ftp|news|file)+\:\/\/)[&#95;.a-z0-9-]+\.[a-z0-9\/&#95;:@=.+?,##%&~-]*[^.|\'|\# |!|\(|?|,| |>|<|;|\)])";
+                Regex r = new Regex(regex, RegexOptions.IgnoreCase);
+                Description = r.Replace(Description, "<a href=\"$1\" title=\"Click to open\" target=\"&#95;blank\">$1</a>").Replace("href=\"www", "href=\"http://www");
+            }
 
             //Organizer
-            Organizer = string.Format("{0} <{1}>",entry.Organizer.DisplayName,entry.Organizer.Email);
+            if (entry.Organizer != null)
+                Organizer = new GventAppendix(this, entry.Organizer);
+
+            //RecurrenceEvent
+            IsRecurrence = (entry.Recurrence != null);
+
+            Attendees.Clear();
+            Resources.Clear();
+
+            if (entry.Attendees != null)
+            {
+
+                foreach (var attendee in entry.Attendees)
+                {
+                    if (attendee.Organizer == true) {
+						if (Organizer == null)
+                            Organizer = new GventAppendix(this, attendee);
+						else
+							Organizer.Update(attendee);
+                    }
+                    else if (attendee.Resource == true) {
+                        AddResource(new GventAppendix(this, attendee));
+                    }
+                    else if (attendee.Self != true)
+                        AddAttendee(new GventAppendix(this, attendee));
+                }
+                Attendees.Sort();
+                Resources.Sort();
+            }
 
             // Times
 
@@ -414,14 +626,9 @@ namespace ReflectiveCode.GMinder
             if (Calendar != null && Calendar.Schedule != null)
                 Calendar.Schedule.NotifyChange(e);
         }
+        #endregion
 
-        #region Serialization
-
-        public Gvent(Calendar calendar) 
-        {
-            this.Calendar = calendar;
-        }
-
+        #region Methods from IXmlSerializable - Serialization
         public XmlSchema GetSchema()
         {
             return null;
@@ -437,19 +644,42 @@ namespace ReflectiveCode.GMinder
                 _Start = DateTime.FromBinary(Int64.Parse(reader["Start"]));
                 _Stop = DateTime.FromBinary(Int64.Parse(reader["Stop"]));
                 _Url = reader["Url"];
-                _Status = (GventStatus)Int32.Parse(reader["Status"]);                
+                _Status = (GventStatus)Int32.Parse(reader["Status"]);
+                _Description = reader["Description"];
+                _IsRecurrence = Convert.ToBoolean(reader["IsRecurrence"]);
 
-                if (reader.ReadToDescendant("Reminder"))
+                reader.ReadStartElement();
+
+                while (reader.IsStartElement() && reader.LocalName != "Event")
                 {
-                    while ((reader.MoveToContent() == XmlNodeType.Element) && (reader.LocalName == "Reminder"))
-                    {
+                    if (reader.LocalName == "Organizer") {
+                        this._Organizer = new GventAppendix(this);
+                        _Organizer.ReadXml(reader);
+                    }
+                    else if (reader.LocalName == "Attendee") {
+                        var person = new GventAppendix(this);
+                            person.ReadXml(reader);
+                            AddAttendee(person);
+                    }
+                    else if (reader.LocalName == "Resource") {
+                        var resource = new GventAppendix(this);
+                        resource.ReadXml(reader);
+                        AddResource(resource);
+                    }
+                    else if (reader.LocalName == "Reminder") {
                         var minder = new GVentMinder();
                         minder.ReadXml(reader);
                         Add(minder);
                     }
+                    else {
+                        Logging.LogException(false, new ArgumentException("found unknown Element " + reader.LocalName));
+                        reader.Read();
+                    }
+                    //reader.Read();
                 }
-
-                reader.Read();
+                if (!reader.IsEmptyElement && !reader.IsStartElement()) {
+                    reader.ReadEndElement();
+                }
             }
         }
 
@@ -462,6 +692,28 @@ namespace ReflectiveCode.GMinder
             writer.WriteAttributeString("Stop", _Stop.ToBinary().ToString());
             writer.WriteAttributeString("Url", _Url);
             writer.WriteAttributeString("Status", ((int)_Status).ToString());
+            writer.WriteAttributeString("Description", _Description);
+            writer.WriteAttributeString("IsRecurrence", _IsRecurrence.ToString().ToLower());
+
+            if (_Organizer != null) {
+                writer.WriteStartElement("Organizer");
+                _Organizer.WriteXml(writer);
+                writer.WriteEndElement();
+            }
+            
+            foreach (var attendee in _Attendees)
+            {
+                writer.WriteStartElement("Attendee");
+                attendee.WriteXml(writer);
+                writer.WriteEndElement();
+            }
+
+            foreach (var resource in _Resources)
+            {
+                writer.WriteStartElement("Resource");
+                resource.WriteXml(writer);
+                writer.WriteEndElement();
+            }
 
             foreach (var reminder in _Minders)
             {

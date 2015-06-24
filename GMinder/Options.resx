@@ -112,21 +112,1247 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="soonColorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="refreshRateLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="refreshRateLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="agendaSettingsFlowLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="startAtLoginCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="startAtLoginCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="startAtLoginCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 17</value>
+  </data>
+  <data name="startAtLoginCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="startAtLoginCheckBox.Text" xml:space="preserve">
+    <value>Start at Windows login</value>
+  </data>
+  <data name="&gt;&gt;startAtLoginCheckBox.Name" xml:space="preserve">
+    <value>startAtLoginCheckBox</value>
+  </data>
+  <data name="&gt;&gt;startAtLoginCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startAtLoginCheckBox.Parent" xml:space="preserve">
+    <value>agendaSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;startAtLoginCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="onTopCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="onTopCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 26</value>
+  </data>
+  <data name="onTopCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 17</value>
+  </data>
+  <data name="onTopCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="onTopCheckBox.Text" xml:space="preserve">
+    <value>Always on top</value>
+  </data>
+  <data name="&gt;&gt;onTopCheckBox.Name" xml:space="preserve">
+    <value>onTopCheckBox</value>
+  </data>
+  <data name="&gt;&gt;onTopCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;onTopCheckBox.Parent" xml:space="preserve">
+    <value>agendaSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;onTopCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="refreshRateInteger.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="refreshRateInteger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 52</value>
+  </data>
+  <data name="refreshRateInteger.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 0, 3</value>
+  </data>
+  <data name="refreshRateInteger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="refreshRateInteger.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;refreshRateInteger.Name" xml:space="preserve">
+    <value>refreshRateInteger</value>
+  </data>
+  <data name="&gt;&gt;refreshRateInteger.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.IntegerUpDown, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;refreshRateInteger.Parent" xml:space="preserve">
+    <value>agendaSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;refreshRateInteger.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="preloadDaysInteger.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="preloadDaysInteger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 78</value>
+  </data>
+  <data name="preloadDaysInteger.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 0, 3</value>
+  </data>
+  <data name="preloadDaysInteger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="preloadDaysInteger.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;preloadDaysInteger.Name" xml:space="preserve">
+    <value>preloadDaysInteger</value>
+  </data>
+  <data name="&gt;&gt;preloadDaysInteger.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.IntegerUpDown, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;preloadDaysInteger.Parent" xml:space="preserve">
+    <value>agendaSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;preloadDaysInteger.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PreloadDaysLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="PreloadDaysLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PreloadDaysLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 81</value>
+  </data>
+  <data name="PreloadDaysLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 3, 0</value>
+  </data>
+  <data name="PreloadDaysLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="PreloadDaysLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="PreloadDaysLabel.Text" xml:space="preserve">
+    <value>Preload how many days</value>
+  </data>
+  <data name="&gt;&gt;PreloadDaysLabel.Name" xml:space="preserve">
+    <value>PreloadDaysLabel</value>
+  </data>
+  <data name="&gt;&gt;PreloadDaysLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PreloadDaysLabel.Parent" xml:space="preserve">
+    <value>agendaSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;PreloadDaysLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="doPingCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="doPingCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 104</value>
+  </data>
+  <data name="doPingCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>423, 17</value>
+  </data>
+  <data name="doPingCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="doPingCheckBox.Text" xml:space="preserve">
+    <value>Test connectivity before downloading events (disable if your events won't download)</value>
+  </data>
+  <data name="&gt;&gt;doPingCheckBox.Name" xml:space="preserve">
+    <value>doPingCheckBox</value>
+  </data>
+  <data name="&gt;&gt;doPingCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;doPingCheckBox.Parent" xml:space="preserve">
+    <value>agendaSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;doPingCheckBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="agendaSettingsFlowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="agendaSettingsFlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="agendaSettingsFlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>461, 124</value>
+  </data>
+  <data name="agendaSettingsFlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;agendaSettingsFlowLayoutPanel.Name" xml:space="preserve">
+    <value>agendaSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;agendaSettingsFlowLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;agendaSettingsFlowLayoutPanel.Parent" xml:space="preserve">
+    <value>agendaSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;agendaSettingsFlowLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="refreshRateLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 55</value>
+  </data>
+  <data name="refreshRateLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 3, 0</value>
+  </data>
+  <data name="refreshRateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="refreshRateLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="refreshRateLabel.Text" xml:space="preserve">
+    <value>Refresh rate (minutes)</value>
+  </data>
+  <data name="&gt;&gt;refreshRateLabel.Name" xml:space="preserve">
+    <value>refreshRateLabel</value>
+  </data>
+  <data name="&gt;&gt;refreshRateLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;refreshRateLabel.Parent" xml:space="preserve">
+    <value>agendaSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;refreshRateLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="buttonOk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>308, 3</value>
+  </data>
+  <data name="buttonOk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonOk.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonOk.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.Name" xml:space="preserve">
+    <value>buttonOk</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.Parent" xml:space="preserve">
+    <value>okCancelFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonOk.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="soonColorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>185, 17</value>
   </metadata>
-  <metadata name="openSoundFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="eventsSettingsGroupBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="eventsSettingsGroupBox.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="eventSettingsTableLayoutPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="eventSettingsTableLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="eventSettingsTableLayoutPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="eventSettingsTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SoonAlertOptionsFlowLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SoonAlertOptionsFlowLayoutPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="soonPopupCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="soonPopupCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="soonPopupCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="soonPopupCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="soonPopupCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="soonPopupCheckBox.Text" xml:space="preserve">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;soonPopupCheckBox.Name" xml:space="preserve">
+    <value>soonPopupCheckBox</value>
+  </data>
+  <data name="&gt;&gt;soonPopupCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;soonPopupCheckBox.Parent" xml:space="preserve">
+    <value>SoonAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soonPopupCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="soonSoundCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="soonSoundCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="soonSoundCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 4</value>
+  </data>
+  <data name="soonSoundCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="soonSoundCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="soonSoundCheckBox.Text" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="&gt;&gt;soonSoundCheckBox.Name" xml:space="preserve">
+    <value>soonSoundCheckBox</value>
+  </data>
+  <data name="&gt;&gt;soonSoundCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;soonSoundCheckBox.Parent" xml:space="preserve">
+    <value>SoonAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soonSoundCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="soonVerbalCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="soonVerbalCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 3</value>
+  </data>
+  <data name="soonVerbalCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="soonVerbalCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="soonVerbalCheckBox.Text" xml:space="preserve">
+    <value>Verbal</value>
+  </data>
+  <data name="&gt;&gt;soonVerbalCheckBox.Name" xml:space="preserve">
+    <value>soonVerbalCheckBox</value>
+  </data>
+  <data name="&gt;&gt;soonVerbalCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;soonVerbalCheckBox.Parent" xml:space="preserve">
+    <value>SoonAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soonVerbalCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="soonTimeInteger.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="soonTimeInteger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>191, 3</value>
+  </data>
+  <data name="soonTimeInteger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="soonTimeInteger.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;soonTimeInteger.Name" xml:space="preserve">
+    <value>soonTimeInteger</value>
+  </data>
+  <data name="&gt;&gt;soonTimeInteger.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.IntegerUpDown, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;soonTimeInteger.Parent" xml:space="preserve">
+    <value>SoonAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soonTimeInteger.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="soonMinutesLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="soonMinutesLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="soonMinutesLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 6</value>
+  </data>
+  <data name="soonMinutesLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 3, 0</value>
+  </data>
+  <data name="soonMinutesLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="soonMinutesLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="soonMinutesLabel.Text" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="&gt;&gt;soonMinutesLabel.Name" xml:space="preserve">
+    <value>soonMinutesLabel</value>
+  </data>
+  <data name="&gt;&gt;soonMinutesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;soonMinutesLabel.Parent" xml:space="preserve">
+    <value>SoonAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soonMinutesLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SoonAlertOptionsFlowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="SoonAlertOptionsFlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 34</value>
+  </data>
+  <data name="SoonAlertOptionsFlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 26</value>
+  </data>
+  <data name="SoonAlertOptionsFlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;SoonAlertOptionsFlowLayoutPanel.Name" xml:space="preserve">
+    <value>SoonAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;SoonAlertOptionsFlowLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SoonAlertOptionsFlowLayoutPanel.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;SoonAlertOptionsFlowLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="futureEventsColorButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="futureEventsColorButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="futureEventsColorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="futureEventsColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 3</value>
+  </data>
+  <data name="futureEventsColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 25</value>
+  </data>
+  <data name="futureEventsColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="futureEventsColorButton.Text" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="&gt;&gt;futureEventsColorButton.Name" xml:space="preserve">
+    <value>futureEventsColorButton</value>
+  </data>
+  <data name="&gt;&gt;futureEventsColorButton.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.ColorButton, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;futureEventsColorButton.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;futureEventsColorButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="FutureEventsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="FutureEventsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FutureEventsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 9</value>
+  </data>
+  <data name="FutureEventsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="FutureEventsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="FutureEventsLabel.Text" xml:space="preserve">
+    <value>Future</value>
+  </data>
+  <data name="&gt;&gt;FutureEventsLabel.Name" xml:space="preserve">
+    <value>FutureEventsLabel</value>
+  </data>
+  <data name="&gt;&gt;FutureEventsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FutureEventsLabel.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;FutureEventsLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SoonEventsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="SoonEventsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SoonEventsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 40</value>
+  </data>
+  <data name="SoonEventsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="SoonEventsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SoonEventsLabel.Text" xml:space="preserve">
+    <value>Soon</value>
+  </data>
+  <data name="&gt;&gt;SoonEventsLabel.Name" xml:space="preserve">
+    <value>SoonEventsLabel</value>
+  </data>
+  <data name="&gt;&gt;SoonEventsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SoonEventsLabel.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;SoonEventsLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="NowEventsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="NowEventsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NowEventsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 72</value>
+  </data>
+  <data name="NowEventsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="NowEventsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="NowEventsLabel.Text" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="&gt;&gt;NowEventsLabel.Name" xml:space="preserve">
+    <value>NowEventsLabel</value>
+  </data>
+  <data name="&gt;&gt;NowEventsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NowEventsLabel.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;NowEventsLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="PastEventsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="PastEventsLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PastEventsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 103</value>
+  </data>
+  <data name="PastEventsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="PastEventsLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="PastEventsLabel.Text" xml:space="preserve">
+    <value>Past</value>
+  </data>
+  <data name="&gt;&gt;PastEventsLabel.Name" xml:space="preserve">
+    <value>PastEventsLabel</value>
+  </data>
+  <data name="&gt;&gt;PastEventsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PastEventsLabel.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;PastEventsLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="NowAlertOptionsFlowLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NowAlertOptionsFlowLayoutPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="nowPopupCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="nowPopupCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="nowPopupCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="nowPopupCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="nowPopupCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="nowPopupCheckBox.Text" xml:space="preserve">
+    <value>Popup</value>
+  </data>
+  <data name="&gt;&gt;nowPopupCheckBox.Name" xml:space="preserve">
+    <value>nowPopupCheckBox</value>
+  </data>
+  <data name="&gt;&gt;nowPopupCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nowPopupCheckBox.Parent" xml:space="preserve">
+    <value>NowAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;nowPopupCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nowSoundCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="nowSoundCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="nowSoundCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 3</value>
+  </data>
+  <data name="nowSoundCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 17</value>
+  </data>
+  <data name="nowSoundCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nowSoundCheckBox.Text" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="&gt;&gt;nowSoundCheckBox.Name" xml:space="preserve">
+    <value>nowSoundCheckBox</value>
+  </data>
+  <data name="&gt;&gt;nowSoundCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nowSoundCheckBox.Parent" xml:space="preserve">
+    <value>NowAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;nowSoundCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nowVerbalCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="nowVerbalCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 3</value>
+  </data>
+  <data name="nowVerbalCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
+  </data>
+  <data name="nowVerbalCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="nowVerbalCheckBox.Text" xml:space="preserve">
+    <value>Verbal</value>
+  </data>
+  <data name="&gt;&gt;nowVerbalCheckBox.Name" xml:space="preserve">
+    <value>nowVerbalCheckBox</value>
+  </data>
+  <data name="&gt;&gt;nowVerbalCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nowVerbalCheckBox.Parent" xml:space="preserve">
+    <value>NowAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;nowVerbalCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="NowAlertOptionsFlowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="NowAlertOptionsFlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 66</value>
+  </data>
+  <data name="NowAlertOptionsFlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 23</value>
+  </data>
+  <data name="NowAlertOptionsFlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="NowAlertOptionsFlowLayoutPanel.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;NowAlertOptionsFlowLayoutPanel.Name" xml:space="preserve">
+    <value>NowAlertOptionsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;NowAlertOptionsFlowLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NowAlertOptionsFlowLayoutPanel.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;NowAlertOptionsFlowLayoutPanel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="pastDismissOptionFlowLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pastDismissOptionFlowLayoutPanel.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="pastDismissCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="pastDismissCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pastDismissCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="pastDismissCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 17</value>
+  </data>
+  <data name="pastDismissCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="pastDismissCheckBox.Text" xml:space="preserve">
+    <value>Dismiss</value>
+  </data>
+  <data name="&gt;&gt;pastDismissCheckBox.Name" xml:space="preserve">
+    <value>pastDismissCheckBox</value>
+  </data>
+  <data name="&gt;&gt;pastDismissCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pastDismissCheckBox.Parent" xml:space="preserve">
+    <value>pastDismissOptionFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;pastDismissCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pastDismissOptionFlowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pastDismissOptionFlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 97</value>
+  </data>
+  <data name="pastDismissOptionFlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 23</value>
+  </data>
+  <data name="pastDismissOptionFlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;pastDismissOptionFlowLayoutPanel.Name" xml:space="preserve">
+    <value>pastDismissOptionFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;pastDismissOptionFlowLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pastDismissOptionFlowLayoutPanel.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;pastDismissOptionFlowLayoutPanel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="SoonEventsColorButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SoonEventsColorButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="SoonEventsColorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="SoonEventsColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 34</value>
+  </data>
+  <data name="SoonEventsColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 25</value>
+  </data>
+  <data name="SoonEventsColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SoonEventsColorButton.Text" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="&gt;&gt;SoonEventsColorButton.Name" xml:space="preserve">
+    <value>SoonEventsColorButton</value>
+  </data>
+  <data name="&gt;&gt;SoonEventsColorButton.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.ColorButton, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;SoonEventsColorButton.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;SoonEventsColorButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="nowEventsColorButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="nowEventsColorButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="nowEventsColorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="nowEventsColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 66</value>
+  </data>
+  <data name="nowEventsColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 25</value>
+  </data>
+  <data name="nowEventsColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="nowEventsColorButton.Text" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="&gt;&gt;nowEventsColorButton.Name" xml:space="preserve">
+    <value>nowEventsColorButton</value>
+  </data>
+  <data name="&gt;&gt;nowEventsColorButton.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.ColorButton, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;nowEventsColorButton.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;nowEventsColorButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="pastEventsColorButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pastEventsColorButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pastEventsColorButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="pastEventsColorButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 97</value>
+  </data>
+  <data name="pastEventsColorButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 25</value>
+  </data>
+  <data name="pastEventsColorButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="pastEventsColorButton.Text" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="&gt;&gt;pastEventsColorButton.Name" xml:space="preserve">
+    <value>pastEventsColorButton</value>
+  </data>
+  <data name="&gt;&gt;pastEventsColorButton.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.ColorButton, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pastEventsColorButton.Parent" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;pastEventsColorButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="eventSettingsTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="eventSettingsTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="eventSettingsTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>461, 125</value>
+  </data>
+  <data name="eventSettingsTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;eventSettingsTableLayoutPanel.Name" xml:space="preserve">
+    <value>eventSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;eventSettingsTableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eventSettingsTableLayoutPanel.Parent" xml:space="preserve">
+    <value>eventsSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;eventSettingsTableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="eventSettingsTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="SoonAlertOptionsFlowLayoutPanel" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="futureEventsColorButton" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="FutureEventsLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="SoonEventsLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NowEventsLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PastEventsLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NowAlertOptionsFlowLayoutPanel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="pastDismissOptionFlowLayoutPanel" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="SoonEventsColorButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="nowEventsColorButton" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pastEventsColorButton" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Absolute,100,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,10,Absolute,10" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="eventsSettingsGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="eventsSettingsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 152</value>
+  </data>
+  <data name="eventsSettingsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>467, 160</value>
+  </data>
+  <data name="eventsSettingsGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="eventsSettingsGroupBox.Text" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="&gt;&gt;eventsSettingsGroupBox.Name" xml:space="preserve">
+    <value>eventsSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;eventsSettingsGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eventsSettingsGroupBox.Parent" xml:space="preserve">
+    <value>optionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;eventsSettingsGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="soundSettingsGroupBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="soundSettingsTableLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="soundSettingsTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="soundPlayButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="soundPlayButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="soundPlayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="soundPlayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="soundPlayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="soundPlayButton.Text" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="&gt;&gt;soundPlayButton.Name" xml:space="preserve">
+    <value>soundPlayButton</value>
+  </data>
+  <data name="&gt;&gt;soundPlayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;soundPlayButton.Parent" xml:space="preserve">
+    <value>soundSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soundPlayButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="soundBrowseButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="soundBrowseButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="soundBrowseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 3</value>
+  </data>
+  <metadata name="openSoundFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="openSoundFileDialog.Filter" xml:space="preserve">
+    <value>Wave|*.wav|All files|*.*</value>
+  </data>
+  <data name="openSoundFileDialog.Title" xml:space="preserve">
+    <value>Sound File</value>
+  </data>
+  <data name="soundBrowseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="soundBrowseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="soundBrowseButton.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="soundPathTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="soundPathTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 4</value>
+  </data>
+  <data name="soundPathTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 20</value>
+  </data>
+  <data name="soundPathTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;soundPathTextBox.Name" xml:space="preserve">
+    <value>soundPathTextBox</value>
+  </data>
+  <data name="&gt;&gt;soundPathTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;soundPathTextBox.Parent" xml:space="preserve">
+    <value>soundSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soundPathTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;soundBrowseButton.Name" xml:space="preserve">
+    <value>soundBrowseButton</value>
+  </data>
+  <data name="&gt;&gt;soundBrowseButton.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.OpenFileButton, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;soundBrowseButton.Parent" xml:space="preserve">
+    <value>soundSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soundBrowseButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="soundSettingsTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="soundSettingsTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="soundSettingsTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="soundSettingsTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>461, 29</value>
+  </data>
+  <data name="soundSettingsTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;soundSettingsTableLayoutPanel.Name" xml:space="preserve">
+    <value>soundSettingsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soundSettingsTableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;soundSettingsTableLayoutPanel.Parent" xml:space="preserve">
+    <value>soundSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;soundSettingsTableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="soundSettingsTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="soundPlayButton" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="soundBrowseButton" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="soundPathTextBox" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="soundSettingsGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="soundSettingsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 318</value>
+  </data>
+  <data name="soundSettingsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>467, 48</value>
+  </data>
+  <data name="soundSettingsGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="soundSettingsGroupBox.Text" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="&gt;&gt;soundSettingsGroupBox.Name" xml:space="preserve">
+    <value>soundSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;soundSettingsGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;soundSettingsGroupBox.Parent" xml:space="preserve">
+    <value>optionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;soundSettingsGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="agendaSettingsGroupBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="agendaSettingsGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="agendaSettingsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="agendaSettingsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>467, 143</value>
+  </data>
+  <data name="agendaSettingsGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="agendaSettingsGroupBox.Text" xml:space="preserve">
+    <value>Agenda</value>
+  </data>
+  <data name="&gt;&gt;agendaSettingsGroupBox.Name" xml:space="preserve">
+    <value>agendaSettingsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;agendaSettingsGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;agendaSettingsGroupBox.Parent" xml:space="preserve">
+    <value>optionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;agendaSettingsGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="optionsTableLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="optionsTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>389, 3</value>
+  </data>
+  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
+    <value>buttonCancel</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
+    <value>okCancelFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>RightToLeft</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 372</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>467, 25</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;okCancelFlowLayoutPanel.Name" xml:space="preserve">
+    <value>okCancelFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;okCancelFlowLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;okCancelFlowLayoutPanel.Parent" xml:space="preserve">
+    <value>optionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;okCancelFlowLayoutPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="optionsTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="optionsTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="optionsTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="optionsTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 408</value>
+  </data>
+  <data name="optionsTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;optionsTableLayoutPanel.Name" xml:space="preserve">
+    <value>optionsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;optionsTableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;optionsTableLayoutPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;optionsTableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="optionsTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="agendaSettingsGroupBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="eventsSettingsGroupBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="soundSettingsGroupBox" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="okCancelFlowLayoutPanel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,Percent,100,Absolute,8" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>44</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>473, 408</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAMDAQAAAAAABoBgAAlgAAACAgEAAAAAAA6AIAAP4GAAAQEBAAAAAAACgBAADmCQAAMDAAAAEA
@@ -551,5 +1777,29 @@
         AAAAAAAAAAAAAIABAACAAQAAgAEAAIABa/+AAdn/gAHj/4ABsv+AAaH/gAGj/4ABo/+AAaP/gAGf/4AB
         q/+AAd//gAP//4AH+/8=
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="&gt;&gt;soonColorDialog.Name" xml:space="preserve">
+    <value>soonColorDialog</value>
+  </data>
+  <data name="&gt;&gt;soonColorDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openSoundFileDialog.Name" xml:space="preserve">
+    <value>openSoundFileDialog</value>
+  </data>
+  <data name="&gt;&gt;openSoundFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

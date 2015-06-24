@@ -82,10 +82,7 @@ namespace ReflectiveCode.GMinder
             }
             catch (Exception ex)
             {
-                Logging.LogException(true, ex,
-                    "Error adding event.",
-                    "You may not have permission to edit the selected calendar."
-                );
+                Logging.LogException(true, ex, Properties.Resources.ErrorAddingEvent);
             }
         }
 

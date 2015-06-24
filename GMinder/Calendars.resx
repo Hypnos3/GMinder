@@ -117,7 +117,597 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CalendarsFormTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="loginGroupBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="loginSettingsFlowLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="loginButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="loginButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="loginButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="loginButton.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;loginButton.Name" xml:space="preserve">
+    <value>loginButton</value>
+  </data>
+  <data name="&gt;&gt;loginButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loginButton.Parent" xml:space="preserve">
+    <value>loginSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;loginButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="loginSettingsFlowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="loginSettingsFlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="loginSettingsFlowLayoutPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="loginSettingsFlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 29</value>
+  </data>
+  <data name="loginSettingsFlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;loginSettingsFlowLayoutPanel.Name" xml:space="preserve">
+    <value>loginSettingsFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;loginSettingsFlowLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loginSettingsFlowLayoutPanel.Parent" xml:space="preserve">
+    <value>loginGroupBox</value>
+  </data>
+  <data name="&gt;&gt;loginSettingsFlowLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="loginGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="loginGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="loginGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>449, 48</value>
+  </data>
+  <data name="loginGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="loginGroupBox.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;loginGroupBox.Name" xml:space="preserve">
+    <value>loginGroupBox</value>
+  </data>
+  <data name="&gt;&gt;loginGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loginGroupBox.Parent" xml:space="preserve">
+    <value>CalendarsFormTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;loginGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="calendardsTableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="calendarNameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="calendarNameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="calendarNameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 136</value>
+  </data>
+  <data name="calendarNameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="calendarNameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="calendarNameLabel.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;calendarNameLabel.Name" xml:space="preserve">
+    <value>calendarNameLabel</value>
+  </data>
+  <data name="&gt;&gt;calendarNameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarNameLabel.Parent" xml:space="preserve">
+    <value>calendardsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarNameLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="calendarColorLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="calendarColorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="calendarColorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 190</value>
+  </data>
+  <data name="calendarColorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="calendarColorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="calendarColorLabel.Text" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="&gt;&gt;calendarColorLabel.Name" xml:space="preserve">
+    <value>calendarColorLabel</value>
+  </data>
+  <data name="&gt;&gt;calendarColorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarColorLabel.Parent" xml:space="preserve">
+    <value>calendardsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarColorLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="calendarUrlLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="calendarUrlLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="calendarUrlLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 162</value>
+  </data>
+  <data name="calendarUrlLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 13</value>
+  </data>
+  <data name="calendarUrlLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="calendarUrlLabel.Text" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="&gt;&gt;calendarUrlLabel.Name" xml:space="preserve">
+    <value>calendarUrlLabel</value>
+  </data>
+  <data name="&gt;&gt;calendarUrlLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarUrlLabel.Parent" xml:space="preserve">
+    <value>calendardsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarUrlLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="calendarsEditFlowLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="calendarAddButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="calendarAddButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 23</value>
+  </data>
+  <data name="calendarAddButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="calendarAddButton.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;calendarAddButton.Name" xml:space="preserve">
+    <value>calendarAddButton</value>
+  </data>
+  <data name="&gt;&gt;calendarAddButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarAddButton.Parent" xml:space="preserve">
+    <value>calendarsEditFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarAddButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="calendarRemoveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 3</value>
+  </data>
+  <data name="calendarRemoveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 23</value>
+  </data>
+  <data name="calendarRemoveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="calendarRemoveButton.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;calendarRemoveButton.Name" xml:space="preserve">
+    <value>calendarRemoveButton</value>
+  </data>
+  <data name="&gt;&gt;calendarRemoveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarRemoveButton.Parent" xml:space="preserve">
+    <value>calendarsEditFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarRemoveButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="calendarClearButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>183, 3</value>
+  </data>
+  <data name="calendarClearButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 23</value>
+  </data>
+  <data name="calendarClearButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="calendarClearButton.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;calendarClearButton.Name" xml:space="preserve">
+    <value>calendarClearButton</value>
+  </data>
+  <data name="&gt;&gt;calendarClearButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarClearButton.Parent" xml:space="preserve">
+    <value>calendarsEditFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarClearButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="calendarDownloadButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 3</value>
+  </data>
+  <data name="calendarDownloadButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 23</value>
+  </data>
+  <data name="calendarDownloadButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="calendarDownloadButton.Text" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="&gt;&gt;calendarDownloadButton.Name" xml:space="preserve">
+    <value>calendarDownloadButton</value>
+  </data>
+  <data name="&gt;&gt;calendarDownloadButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarDownloadButton.Parent" xml:space="preserve">
+    <value>calendarsEditFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarDownloadButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="calendarsEditFlowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="calendarsEditFlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 214</value>
+  </data>
+  <data name="calendarsEditFlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>437, 29</value>
+  </data>
+  <data name="calendarsEditFlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;calendarsEditFlowLayoutPanel.Name" xml:space="preserve">
+    <value>calendarsEditFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarsEditFlowLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarsEditFlowLayoutPanel.Parent" xml:space="preserve">
+    <value>calendardsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarsEditFlowLayoutPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="calendarNameTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="calendarNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 133</value>
+  </data>
+  <data name="calendarNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>396, 20</value>
+  </data>
+  <data name="calendarNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;calendarNameTextBox.Name" xml:space="preserve">
+    <value>calendarNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;calendarNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarNameTextBox.Parent" xml:space="preserve">
+    <value>calendardsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarNameTextBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="calendarUrlTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="calendarUrlTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 159</value>
+  </data>
+  <data name="calendarUrlTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>396, 20</value>
+  </data>
+  <data name="calendarUrlTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;calendarUrlTextBox.Name" xml:space="preserve">
+    <value>calendarUrlTextBox</value>
+  </data>
+  <data name="&gt;&gt;calendarUrlTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarUrlTextBox.Parent" xml:space="preserve">
+    <value>calendardsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarUrlTextBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>145</value>
+  </data>
+  <data name="calendarList.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="calendarList.LabelWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="calendarList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="calendarList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>437, 124</value>
+  </data>
+  <data name="calendarList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;calendarList.Name" xml:space="preserve">
+    <value>calendarList</value>
+  </data>
+  <data name="&gt;&gt;calendarList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarList.Parent" xml:space="preserve">
+    <value>calendardsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarList.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="calendarColorBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="calendarColorBox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="calendarColorBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 185</value>
+  </data>
+  <data name="calendarColorBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>396, 23</value>
+  </data>
+  <data name="calendarColorBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;calendarColorBox.Name" xml:space="preserve">
+    <value>calendarColorBox</value>
+  </data>
+  <data name="&gt;&gt;calendarColorBox.Type" xml:space="preserve">
+    <value>ReflectiveCode.GMinder.Controls.ColorButton, GMinder, Version=1.4.0.2, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;calendarColorBox.Parent" xml:space="preserve">
+    <value>calendardsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarColorBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="calendardsTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="calendardsTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="calendardsTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="calendardsTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 246</value>
+  </data>
+  <data name="calendardsTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;calendardsTableLayoutPanel.Name" xml:space="preserve">
+    <value>calendardsTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendardsTableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendardsTableLayoutPanel.Parent" xml:space="preserve">
+    <value>calendarsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;calendardsTableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="calendardsTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="calendarNameLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="calendarColorLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="calendarUrlLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="calendarsEditFlowLayoutPanel" Row="4" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="calendarNameTextBox" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="calendarUrlTextBox" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="calendarList" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="calendarColorBox" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,100,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="calendarsGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="calendarsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 57</value>
+  </data>
+  <data name="calendarsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>449, 265</value>
+  </data>
+  <data name="calendarsGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="calendarsGroupBox.Text" xml:space="preserve">
+    <value>Calendars</value>
+  </data>
+  <data name="&gt;&gt;calendarsGroupBox.Name" xml:space="preserve">
+    <value>calendarsGroupBox</value>
+  </data>
+  <data name="&gt;&gt;calendarsGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calendarsGroupBox.Parent" xml:space="preserve">
+    <value>CalendarsFormTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;calendarsGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>377, 3</value>
+  </data>
+  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>okCancelFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 3</value>
+  </data>
+  <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
+    <value>okButton</value>
+  </data>
+  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
+    <value>okCancelFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>RightToLeft</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 325</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>455, 29</value>
+  </data>
+  <data name="okCancelFlowLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;okCancelFlowLayoutPanel.Name" xml:space="preserve">
+    <value>okCancelFlowLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;okCancelFlowLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;okCancelFlowLayoutPanel.Parent" xml:space="preserve">
+    <value>CalendarsFormTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;okCancelFlowLayoutPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CalendarsFormTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="CalendarsFormTableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="CalendarsFormTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CalendarsFormTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>455, 354</value>
+  </data>
+  <data name="CalendarsFormTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CalendarsFormTableLayoutPanel.Name" xml:space="preserve">
+    <value>CalendarsFormTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;CalendarsFormTableLayoutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CalendarsFormTableLayoutPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CalendarsFormTableLayoutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CalendarsFormTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="loginGroupBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="calendarsGroupBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="okCancelFlowLayoutPanel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>455, 354</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAMDAAAAEAIABoJgAANgAAACAgAAABACAAKBEAAF4nAAAQEAAAAQAgAGgEAACGOAAAKAAAADAA
@@ -383,5 +973,23 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAA=
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Calendars</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
+    <value>columnHeader1</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Calendars</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
