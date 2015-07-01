@@ -15,7 +15,7 @@ namespace ReflectiveCode.GMinder.Controls
         private Dictionary<DateTime, ListViewItem> _Headers = new Dictionary<DateTime, ListViewItem>();
         private Dictionary<Gvent, ListViewItem> _Gvents = new Dictionary<Gvent, ListViewItem>();
         private Point LastMousePos = new Point(-1, -1);
-        private TheArtOfDev.HtmlRenderer.WinForms.HtmlToolTip toolTip; // ToolTip toolTip;
+        private ToolTip toolTip;
 
         delegate void BeginUpdateCallback();
         delegate void EndUpdateCallback();
@@ -40,9 +40,7 @@ namespace ReflectiveCode.GMinder.Controls
 
             //ShowItemToolTips = true;
             //ToolTip
-            toolTip = new TheArtOfDev.HtmlRenderer.WinForms.HtmlToolTip(); //new ToolTip();
-            //toolTip.IsBalloon = true;
-            toolTip.AllowLinksHandling = false;
+            toolTip = new ToolTip();
 
             this.MouseMove += MouseMoveHandler;
 
@@ -424,7 +422,7 @@ namespace ReflectiveCode.GMinder.Controls
                         break;
                 }
 
-                item.ToolTipText = gvent.GetDescriptionHtml(false); //gvent.GetDescriptionText();
+                item.ToolTipText = gvent.GetDescriptionText();
             }
         }
 
