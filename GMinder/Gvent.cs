@@ -31,7 +31,6 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Web;
 
@@ -324,10 +323,8 @@ namespace ReflectiveCode.GMinder
             }
         }
 
-        public string ToolTip
+        public string GetDescriptionText()
         {
-            get
-            {
                 StringBuilder sb = new StringBuilder();
 
                 if (!string.IsNullOrEmpty(Calendar.Name)) {
@@ -350,7 +347,149 @@ namespace ReflectiveCode.GMinder
                 }
 
                 return sb.ToString();
+        }
+
+        public string GetDescriptionHtml( bool Enhanced = false )
+        {
+            StringBuilder sb = new StringBuilder();
+
+            // Title
+            sb.Append("<h3 style=\"display: inline\">");
+            if (!Enhanced || string.IsNullOrEmpty(this.Url)) {
+                sb.Append(this.Title);
             }
+            else {
+                sb.Append("<a href=\"");
+                sb.Append(this.Url);
+                sb.Append("\">");
+                sb.Append(this.Title);
+                sb.Append("</a>");
+            }
+            sb.Append("</h3>");
+
+            sb.Append("<br /><span style=\"font-size: small\">");
+            // Time
+            sb.Append(this.WhenString);
+
+            // Location
+            if (this.LocationResource != null) {
+                sb.Append("<br />");
+                sb.Append(this.LocationResource.Name);
+
+                if (Enhanced) {
+                    if (!string.IsNullOrEmpty(this.LocationResource.Url)) {
+                        sb.Append("&nbsp;&nbsp;<a href=\"");
+                        sb.Append(this.LocationResource.Url);
+                        sb.Append("\" Title=\"");
+                        sb.Append(this.LocationResource.Url);
+                        sb.Append("\">");
+                        sb.Append(Properties.Resources.sLinkLocation);
+                        sb.Append("</a>");
+                    }
+
+                    if (!string.IsNullOrEmpty(this.LocationResource.UrlLayout)) {
+                        sb.Append("&nbsp;&nbsp;<a href=\"");
+                        sb.Append(this.LocationResource.UrlLayout);
+                        sb.Append("\" Title=\"");
+                        sb.Append(this.LocationResource.UrlLayout);
+                        sb.Append("\">");
+                        sb.Append(Properties.Resources.sLinkLayout);
+                        sb.Append("</a>");
+                    }
+
+                    sb.Append("&nbsp;&nbsp;(<a href=\"");
+                    sb.Append(string.Format(Properties.Resources.GoogleMapsLink, HttpUtility.UrlEncode(this.Location)));
+                    sb.Append("\" Title=\"Google Maps Link\">");
+                    sb.Append(Properties.Resources.sLinkGoogleMap);
+                    sb.Append("</a>)");
+                    sb.Append(this.LocationResource.Comment);
+                }
+            }
+            else if (!string.IsNullOrEmpty(this.Location)) {
+                sb.Append("<br />");
+                sb.Append(this.Location);
+
+                if (Enhanced) {
+                    sb.Append("&nbsp;&nbsp;(<a href=\"");
+                    sb.Append(string.Format(Properties.Resources.GoogleMapsLink, HttpUtility.UrlEncode(this.Location)));
+                    sb.Append("\" Title=\"Google Maps Link\">");
+                    sb.Append(Properties.Resources.sLinkGoogleMap);
+                    sb.Append("</a>)");
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Calendar.Name)) {
+                sb.Append("<br />");
+                sb.Append(Properties.Resources.sCalendar);
+                sb.Append(":&nbsp;");
+                sb.AppendLine(Calendar.Name);
+                sb.Append("<br />");
+            }
+
+            if (this.Organizer != null && !this.Organizer.Self) {
+                sb.Append("<br />");
+                sb.Append(Properties.Resources.sOrganizer);
+                sb.Append(":&nbsp;");
+                sb.Append(this.Organizer.Name);
+            }
+            sb.Append("</span>");
+
+            if (Enhanced && !string.IsNullOrEmpty(this.Description)) {
+                sb.Append("<br /><span style=\"font-size: small\">");
+                sb.Append(this.Description);
+                sb.Append("</span>");
+            }
+
+
+            if (Enhanced && this.Attendees.Count > 0) {
+                sb.Append("<br /><span style=\"font-size: x-small\">");
+                sb.Append(Properties.Resources.sAttendees);
+                sb.Append(":&nbsp;");
+
+                for (int i = 0; i < this.Attendees.Count; i++) {
+                    if (i > 0)
+                        sb.Append(", ");
+
+                    sb.Append("<span style=\"");
+                    {
+                        var ev = this.Attendees[i];
+
+                        if (ev.Optional)
+                            sb.Append(" color:#888;");
+
+                        if (ev.State == GventAppendixResponseStatus.Declined)
+                            sb.Append(" text-decoration: line-through;");
+                        else if (ev.State == GventAppendixResponseStatus.Tentative)
+                            sb.Append(" font-style: italic;");
+
+                        sb.Append("\">");
+
+                        if (ev.State == GventAppendixResponseStatus.NeedsAction)
+                            sb.Append("?");
+
+                        if (!string.IsNullOrEmpty(ev.Url)) {
+                            sb.Append("<a href=\"");
+                            sb.Append(ev.Url);
+                            sb.Append("\" Title=\"");
+                            sb.Append(ev.Email);
+                            sb.Append("\">");
+                            sb.Append(ev.Name);
+                            sb.Append("</a>");
+                        }
+                        else {
+                            sb.Append("<span Title=\"");
+                            sb.Append(ev.Email);
+                            sb.Append("\">");
+                            sb.Append(ev.Name);
+                            sb.Append("</span>");
+                        }
+                    }
+                    sb.Append("</span>");
+                }
+                sb.Append("</span>");
+            }
+
+            return sb.ToString();
         }
         #endregion
 
@@ -380,7 +519,7 @@ namespace ReflectiveCode.GMinder
             if (_Minders.Contains(minder))
                 return;
 
-            minder.Gvent = this;
+            minder.GVent = this;
             _Minders.Add(minder);
             minder.Processed = true;
             NotifyChange(new GventEventArgs(this, GventChanges.AddedReminder));
@@ -401,7 +540,7 @@ namespace ReflectiveCode.GMinder
             if (_Resources.Contains(resource))
                 return;
 
-            resource.Gvent = this;
+            resource.GVent = this;
             _Resources.Add(resource);
             NotifyChange(new GventAppendixEventArgs(this, resource, GventChanges.AddedAppendix));
         }
@@ -419,6 +558,7 @@ namespace ReflectiveCode.GMinder
         {
             if (_Attendees.Contains(attendee))
                 return;
+            attendee.GVent = this;
             _Attendees.Add(attendee);
             NotifyChange(new GventAppendixEventArgs(this, attendee, GventChanges.AddedAppendix));
         }
@@ -459,29 +599,67 @@ namespace ReflectiveCode.GMinder
             //RecurrenceEvent
             IsRecurrence = (entry.Recurrence != null);
 
-            Attendees.Clear();
-            Resources.Clear();
+            foreach (var attendee in Attendees)
+                attendee.Processed = false;
 
+            foreach (var resource in Resources)
+                resource.Processed = false; 
+            
             if (entry.Attendees != null)
             {
-
                 foreach (var attendee in entry.Attendees)
                 {
-                    if (attendee.Organizer == true) {
-						if (Organizer == null)
+                    if (attendee.Organizer == true)
+                    {
+                        if (Organizer == null)
                             Organizer = new GventAppendix(this, attendee);
-						else
-							Organizer.Update(attendee);
+                        else
+                            Organizer.Update(attendee);
                     }
-                    else if (attendee.Resource == true) {
-                        AddResource(new GventAppendix(this, attendee));
+                    else if (attendee.Resource == true)
+                    {
+                        bool matched = false;
+                        foreach (var res in Resources)
+                        {
+                            matched = (res.Name == attendee.DisplayName);
+                            if (matched)
+                            {
+                                res.Update(attendee);
+                                NotifyChange(new GventAppendixEventArgs(this, res, GventChanges.UpdatedAppendix));
+                                break;
+                            }
+                        }
+                        if (!matched)
+                            AddResource(new GventAppendix(this, attendee));
                     }
                     else if (attendee.Self != true)
-                        AddAttendee(new GventAppendix(this, attendee));
+                    {
+                        bool matched = false;
+                        foreach (var att in Attendees)
+                        {
+                            matched = (att.Name == attendee.DisplayName);
+                            if (matched)
+                            {
+                                att.Update(attendee);
+                                NotifyChange(new GventAppendixEventArgs(this, att, GventChanges.UpdatedAppendix));
+                                break;
+                            }
+                        }
+                        if (!matched) 
+                            AddAttendee(new GventAppendix(this, attendee));
+                    }
                 }
                 Attendees.Sort();
                 Resources.Sort();
             }
+
+            foreach (var attendee in Attendees)
+                if (!attendee.Processed)
+                    RemoveAttendee(attendee);
+
+            foreach (var resource in Resources)
+                if (!resource.Processed)
+                    RemoveResource(resource);
 
             // Times
 
@@ -622,6 +800,11 @@ namespace ReflectiveCode.GMinder
         }
 
         private void NotifyChange(GventEventArgs e)
+        {
+            if (Calendar != null && Calendar.Schedule != null)
+                Calendar.Schedule.NotifyChange(e);
+        }
+        private void NotifyChange(GventAppendixEventArgs e)
         {
             if (Calendar != null && Calendar.Schedule != null)
                 Calendar.Schedule.NotifyChange(e);

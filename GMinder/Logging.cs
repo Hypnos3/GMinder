@@ -26,6 +26,12 @@ using System;
 using System.Text;
 using System.Windows.Forms;
 
+#if DEBUG
+using System.Diagnostics;
+using System.IO.IsolatedStorage;
+using System.IO;
+#endif
+
 namespace ReflectiveCode.GMinder
 {
     /// <summary>
@@ -34,60 +40,112 @@ namespace ReflectiveCode.GMinder
     public static class Logging
     {
         private const string ERROR_LOG = "ErrorLog.txt";
+        private const string NORMAL_LOG = "Log.txt";
 
-        public static void LogException(bool alert, Exception e, params string[] details)
+        [DebuggerStepThrough]
+        public static void LogException( bool alert, Exception e, params string[] details )
         {
-            // Prepare to write to the error log file
-            var logMessage = new StringBuilder();
+            try {
+                // Prepare to write to the error log file
+                var logMessage = new StringBuilder();
 
-            // Prepare the timestamp
-            string prefix = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss - ");
+                // Prepare the timestamp
+                string prefix = DateTime.Now.ToString("dd-MM-yyyy hh:mm:ss - ");
 
-            // Write each detail
-            foreach (string detail in details)
-            {
-                logMessage.Append(prefix);
-                prefix = "                      ";
-                logMessage.AppendLine(detail.Replace(Environment.NewLine, prefix + Environment.NewLine));
+                // Write each detail
+                foreach (string detail in details) {
+                    logMessage.Append(prefix);
+                    prefix = "                      ";
+                    logMessage.AppendLine(detail.Replace(Environment.NewLine, prefix + Environment.NewLine));
+                }
+
+                // Write exception message
+                LogException(prefix, logMessage, e);
+
+                // Open the log file for writing
+                Storage.AppendText(ERROR_LOG, logMessage.ToString());
+
             }
-
-            // Write exception message
-            logMessage.Append(prefix);
-            logMessage.AppendLine(e.Message);
-
-            if (e.InnerException != null)
-            {
-                logMessage.AppendLine("  " + e.InnerException.Message);
+            catch (Exception ex) {
+#if DEBUG
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.StackTrace);
+#endif
             }
-
-            // Open the log file for writing
-            Storage.AppendText(ERROR_LOG, logMessage.ToString());
 
             // Display a message box if requested
-            if (alert) 
+            if (alert)
                 DisplayAlert(e, details);
         }
 
+        [DebuggerStepThrough]
+        private static void LogException(string prefix, StringBuilder logMessage, Exception e )
+        {
+#if DEBUG
+            Debug.Indent();
+            Debug.WriteLine(e.Message);
+#endif
+            logMessage.Append(prefix);
+            logMessage.AppendLine(e.Message);
+            if (!string.IsNullOrEmpty(e.StackTrace)) {
+                logMessage.Append(prefix);
+                logMessage.AppendLine(e.StackTrace);
+#if DEBUG
+                Debug.WriteLine(e.StackTrace);
+#endif
+            }
+
+            if (e.InnerException != null) {
+                LogException(prefix, logMessage, e.InnerException);
+            }
+#if DEBUG
+            Debug.Unindent();
+#endif
+        }
+
+        public static void AppendText(string text, params string[] details)
+        {
+
+            Console.WriteLine(text, details);
+            using (var stream = new IsolatedStorageFileStream(NORMAL_LOG, FileMode.Append))
+            {
+                using (var writer = new StreamWriter(stream))
+                {
+                    writer.WriteLine(text, details);
+                    writer.Flush();
+                }
+            }
+        }
+
+        [DebuggerStepThrough]
         private static void DisplayAlert(Exception e, string[] details)
         {
-            var errorMessage = new StringBuilder();
+            try {
+                var errorMessage = new StringBuilder();
 
-            // Write each detail
-            foreach (string detail in details)
-                errorMessage.AppendLine(detail);
+                // Write each detail
+                foreach (string detail in details)
+                    errorMessage.AppendLine(detail);
 
-            // Write exception message
-            errorMessage.AppendLine();
-            errorMessage.AppendLine("Exception:");
-            errorMessage.AppendLine(e.Message);
+                // Write exception message
+                errorMessage.AppendLine();
+                errorMessage.AppendLine("Exception:");
+                errorMessage.AppendLine(e.Message);
 
-            // Display alert
-            MessageBox.Show(
-                errorMessage.ToString(),
-                Properties.Resources.ErrorGenericExceptionTitle,
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-            );
+                // Display alert
+                MessageBox.Show(
+                    errorMessage.ToString(),
+                    Properties.Resources.ErrorGenericExceptionTitle,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            catch (Exception ex) {
+#if DEBUG
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine(ex.StackTrace);
+#endif
+            }
         }
     }
 }

@@ -217,6 +217,24 @@ namespace ReflectiveCode.GMinder.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to load saved locations.
+        /// </summary>
+        internal static string ErrorLocationsLoad {
+            get {
+                return ResourceManager.GetString("ErrorLocationsLoad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to save locations.
+        /// </summary>
+        internal static string ErrorLocationsSave {
+            get {
+                return ResourceManager.GetString("ErrorLocationsSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must first click on the Login button to allow GMinder access to your Google Calendar.
         /// </summary>
         internal static string ErrorLoginFirstText {
@@ -475,6 +493,33 @@ namespace ReflectiveCode.GMinder.Properties {
         internal static string sDownloading {
             get {
                 return ResourceManager.GetString("sDownloading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map.
+        /// </summary>
+        internal static string sLinkGoogleMap {
+            get {
+                return ResourceManager.GetString("sLinkGoogleMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layout.
+        /// </summary>
+        internal static string sLinkLayout {
+            get {
+                return ResourceManager.GetString("sLinkLayout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        internal static string sLinkLocation {
+            get {
+                return ResourceManager.GetString("sLinkLocation", resourceCulture);
             }
         }
         

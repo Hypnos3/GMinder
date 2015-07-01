@@ -32,7 +32,7 @@ using System.Collections.Generic;
 namespace ReflectiveCode.GMinder
 {
     [Serializable]
-    public class GventAppendix : IXmlSerializable, IComparer<GventAppendix>, IComparable
+    public class GventAppendix :  GVentElement, IXmlSerializable, IComparer<GventAppendix>, IComparable
     {
         public const string UNDEFINED = "undefined";
         public const string RESPONSE_STATUS_ACCEPTED = "accepted";
@@ -46,27 +46,36 @@ namespace ReflectiveCode.GMinder
         public const string RESOURCETYPE_RESOURCE = "Resource";
 
         #region Properties
-        public Gvent Gvent { get; set; }
         public string Id { get; private set; }
         public string Name { get; private set; }
         public string Email { get; set; }
         public string Comment { get; set; }
-        public string Url { get; set; }
+        private string _Url;
+        public string Url
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this._Url))
+                    return _Url;
+                else if (!string.IsNullOrEmpty(this.Email) &&
+                        this.Type != GventAppendixType.Resource)
+                    return "mailto:" + this.Email;
+                else
+                    return string.Empty;
+            }
+            set
+            {
+                if (value != this.Url) {
+                    this._Url = value;
+                }
+            }
+        }
+
+        public string UrlLayout { get; set; }
         public bool Optional { get; set; }
         public bool Self { get; set; }
         public GventAppendixType Type { get; set; }
         public GventAppendixResponseStatus State { get; set; }
-
-        public string DisplayName
-        {
-            get
-            {
-                if (!string.IsNullOrEmpty(Email) && Name != Email)
-                    return string.Format("{0} <{1}>", Name, Email);
-
-                return Name;
-            }
-        }
 
         public string StateName
         {
@@ -90,15 +99,17 @@ namespace ReflectiveCode.GMinder
 
         #region Constructor
         public GventAppendix( Gvent gevent )
+            : base(gevent)
         {
-            this.Gvent = gevent;
 		    this.Id = string.Empty;
             this.Name = DEFAULT_NAME;
             this.Email = string.Empty;
             this.Url = string.Empty;
+            this.UrlLayout = string.Empty;
             this.Comment = string.Empty;
 			this.Type = GventAppendixType.None;
             this.State = GventAppendixResponseStatus.None;
+            this.Processed = true;
         }
 
         public GventAppendix(Gvent gevent, string id, string name)
@@ -106,10 +117,8 @@ namespace ReflectiveCode.GMinder
         {
             this.Id = (id ?? string.Empty);
             this.Name = (name ?? DEFAULT_NAME);
-
-            ExternalUpdate();
+            this.Processed = true;
         }
-
 
         public GventAppendix( Gvent gevent, EventAttendee Attendee )
             : this(gevent)
@@ -120,8 +129,7 @@ namespace ReflectiveCode.GMinder
         public GventAppendix( Gvent gevent, Event.OrganizerData Organizer )
             : this(gevent)
         {
-            Update(Organizer);
-            ExternalUpdate();
+            this.Update(Organizer);
         }
         #endregion
 
@@ -131,16 +139,26 @@ namespace ReflectiveCode.GMinder
 			if (Attendee == null)
 				return;
 
+            if (Attendee.Resource == true)
+                this.Type = GventAppendixType.Resource;
+            else if (Attendee.Organizer == true)
+                this.Type = GventAppendixType.Organisator;
+            else
+                this.Type = GventAppendixType.Attendee;
+
+            if (this.Type == GventAppendixType.Resource) {
+                if (GVent != null && Name == GVent.Location)
+                    GVent.LocationResource = this;
+            }
+
             if (Attendee.Id != null)
-                this.Id = Attendee.Id;
+                this.Id = Attendee.Id.Trim('\r', '\n', ' ');
 				
             if (Attendee.DisplayName != null)
-                this.Name = Attendee.DisplayName;
+                this.Name = Attendee.DisplayName.Trim('\r', '\n', ' ');
 
-            if (Attendee.Email != null) {
-                this.Email = Attendee.Email;
-                this.Url = "mailto:" + this.Email;
-            }
+            if (Attendee.Email != null)
+                this.Email = Attendee.Email.Trim();
             
             if (Attendee.Comment != null)
                 this.Comment = Attendee.Comment.Trim('\r', '\n', ' ');
@@ -170,19 +188,8 @@ namespace ReflectiveCode.GMinder
                     break;
             }
 
-            if (Attendee.Resource == true)
-                this.Type = GventAppendixType.Resource;
-            else if (Attendee.Organizer == true)
-                this.Type = GventAppendixType.Organisator;
-            else
-                this.Type = GventAppendixType.Attendee;
 
-            if (this.Type == GventAppendixType.Resource) {
-                if (Name == Gvent.Location)
-                    Gvent.LocationResource = this;
-            }
-
-            ExternalUpdate();
+            this.Processed = true;
         }
 
         public void Update( Event.OrganizerData Organizer )
@@ -193,38 +200,35 @@ namespace ReflectiveCode.GMinder
                 return;
 
             if (Organizer.Id != null)
-                this.Id = Organizer.Id;
+                this.Id = Organizer.Id.Trim('\r', '\n', ' ');
 
             if (Organizer.DisplayName != null)
-                this.Name = Organizer.DisplayName;
+                this.Name = Organizer.DisplayName.Trim('\r', '\n', ' ');
 
-            if (Organizer.Email != null) {
-                this.Email = Organizer.Email;
-                this.Url = "mailto:" + this.Email;
-            }
+            if (Organizer.Email != null)
+                this.Email = Organizer.Email.Trim();
 
             if (Organizer.Self != null)
                 this.Self = ( Organizer.Self == true );
 
-            Gvent.Organizer = this;
+            if (GVent != null)
+                GVent.Organizer = this;
 
-            ExternalUpdate();
-        }
-
-        private void ExternalUpdate()
-        {
-            if (Gvent != null && Gvent.Calendar != null && Gvent.Calendar.ProcessEventAppendix != null)
-                Gvent.Calendar.ProcessEventAppendix(this);
+            this.Processed = true;
         }
 
         public override string ToString()
         {
+            string name = Name;
+            if (!string.IsNullOrEmpty(Email) && Name != Email)
+                name = string.Format("{0} <{1}>", Name, Email);
+
             string state = StateName;
             if (string.IsNullOrEmpty(state)) {
-                    return string.Format(Properties.Resources.PersonToString, DisplayName, Email);
+                return string.Format(Properties.Resources.PersonToString, name, Email);
             }
 
-            return string.Format(Properties.Resources.PersonToStringState, DisplayName, Email, state);
+            return string.Format(Properties.Resources.PersonToStringState, name, Email, state);
         }
         #endregion
 
@@ -245,7 +249,7 @@ namespace ReflectiveCode.GMinder
                 Name = reader["Name"];
                 Email = reader["Email"];
                 Comment = reader["Comment"];
-                Url = reader["Url"];
+                _Url = reader["Url"];
                 Optional = Convert.ToBoolean(reader["Optional"]);
                 Self = Convert.ToBoolean(reader["Self"]);
                 State = (GventAppendixResponseStatus)Int32.Parse(reader["State"]);
@@ -260,7 +264,7 @@ namespace ReflectiveCode.GMinder
             writer.WriteAttributeString("Name", Name);
             writer.WriteAttributeString("Email", Email);
             writer.WriteAttributeString("Comment", Comment);
-            writer.WriteAttributeString("Url", Url);
+            writer.WriteAttributeString("Url", _Url);
             writer.WriteAttributeString("Optional", ( Optional ).ToString().ToLower());
             writer.WriteAttributeString("Self", ( Self ).ToString().ToLower());
             writer.WriteAttributeString("State", ( (int)State ).ToString());
@@ -294,7 +298,7 @@ namespace ReflectiveCode.GMinder
 
         public int CompareTo( object obj )
         {
-            return this.CompareTo(obj as GventAppendix);
+            return this.Compare(this, obj as GventAppendix);
         }
 
         #endregion

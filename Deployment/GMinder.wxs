@@ -21,8 +21,6 @@
 						<File Id="Google.Apis.Core.dll" Source="$(var.SourceDir)\Google.Apis.Core.dll" />
 						<File Id="Google.Apis.dll" Source="$(var.SourceDir)\Google.Apis.dll" />
 						<File Id="Google.Apis.PlatformServices.dll" Source="$(var.SourceDir)\Google.Apis.PlatformServices.dll" />
-						<File Id="HtmlRenderer.dll" Source="$(var.SourceDir)\HtmlRenderer.dll" />
-						<File Id="HtmlRenderer.WinForms.dll" Source="$(var.SourceDir)\HtmlRenderer.WinForms.dll" />
 						<File Id="log4net.dll" Source="$(var.SourceDir)\log4net.dll" />
 						<File Id="Microsoft.Threading.Tasks.dll" Source="$(var.SourceDir)\Microsoft.Threading.Tasks.dll" />
 						<File Id="Microsoft.Threading.Tasks.Extensions.Desktop.dll" Source="$(var.SourceDir)\Microsoft.Threading.Tasks.Extensions.Desktop.dll" />

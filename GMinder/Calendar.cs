@@ -192,8 +192,6 @@ namespace ReflectiveCode.GMinder
         }
 
         public bool DownloadError { get; set; }
-
-        public Action<GventAppendix> ProcessEventAppendix { get; set; }
         #endregion
 
         private Calendar(CalendarListEntry entry)
@@ -361,6 +359,12 @@ namespace ReflectiveCode.GMinder
         }
 
         private void NotifyChange(GventEventArgs e)
+        {
+            if (Schedule != null)
+                Schedule.NotifyChange(e);
+        }
+
+        private void NotifyChange(GventAppendixEventArgs e)
         {
             if (Schedule != null)
                 Schedule.NotifyChange(e);

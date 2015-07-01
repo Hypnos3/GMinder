@@ -38,6 +38,7 @@
             this.linkOlder = new System.Windows.Forms.LinkLabel();
             this.linkOldest = new System.Windows.Forms.LinkLabel();
             this.description = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.aboutTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -48,12 +49,13 @@
             this.aboutTableLayoutPanel.Controls.Add(this.logoPictureBox, 0, 0);
             this.aboutTableLayoutPanel.Controls.Add(this.productNameLabel, 1, 0);
             this.aboutTableLayoutPanel.Controls.Add(this.versionLabel, 1, 2);
-            this.aboutTableLayoutPanel.Controls.Add(this.okButton, 1, 7);
             this.aboutTableLayoutPanel.Controls.Add(this.linkLatest, 1, 3);
             this.aboutTableLayoutPanel.Controls.Add(this.label1, 1, 4);
             this.aboutTableLayoutPanel.Controls.Add(this.linkOlder, 1, 5);
             this.aboutTableLayoutPanel.Controls.Add(this.linkOldest, 1, 6);
             this.aboutTableLayoutPanel.Controls.Add(this.description, 1, 1);
+            this.aboutTableLayoutPanel.Controls.Add(this.okButton, 1, 8);
+            this.aboutTableLayoutPanel.Controls.Add(this.linkLabel1, 1, 7);
             this.aboutTableLayoutPanel.Name = "aboutTableLayoutPanel";
             // 
             // logoPictureBox
@@ -107,6 +109,12 @@
             resources.ApplyResources(this.description, "description");
             this.description.Name = "description";
             // 
+            // linkLabel1
+            // 
+            resources.ApplyResources(this.linkLabel1, "linkLabel1");
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.TabStop = true;
+            // 
             // About
             // 
             this.AcceptButton = this.okButton;
@@ -138,5 +146,6 @@
         private System.Windows.Forms.LinkLabel linkOlder;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label description;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

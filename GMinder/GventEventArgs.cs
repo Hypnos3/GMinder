@@ -76,11 +76,10 @@ namespace ReflectiveCode.GMinder
         Organizer = 1 << 13,
         IsRecurrence = 1 << 14,
         Attendees = 1 << 15,
-        OptionalAttendees = 1 << 16,
-        Resources = 1 << 17,
-        LocationResource = 1 << 18,
-        AddedAppendix = 1 << 19,
-        DeletedAppendix = 1 << 20,
-        UpdatedAppendix = 1 << 21
+        Resources = 1 << 16,
+        LocationResource = 1 << 17,
+        AddedAppendix = 1 << 18,
+        DeletedAppendix = 1 << 19,
+        UpdatedAppendix = 1 << 20
     }
 }

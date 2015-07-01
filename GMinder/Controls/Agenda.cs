@@ -15,7 +15,7 @@ namespace ReflectiveCode.GMinder.Controls
         private Dictionary<DateTime, ListViewItem> _Headers = new Dictionary<DateTime, ListViewItem>();
         private Dictionary<Gvent, ListViewItem> _Gvents = new Dictionary<Gvent, ListViewItem>();
         private Point LastMousePos = new Point(-1, -1);
-        private ToolTip toolTip;
+        private TheArtOfDev.HtmlRenderer.WinForms.HtmlToolTip toolTip; // ToolTip toolTip;
 
         delegate void BeginUpdateCallback();
         delegate void EndUpdateCallback();
@@ -37,9 +37,12 @@ namespace ReflectiveCode.GMinder.Controls
             View = View.Details;
             ListViewItemSorter = new AgendaComparer();
             ForeColor = Color.Black;
+
             //ShowItemToolTips = true;
-            toolTip = new ToolTip();
-            toolTip.IsBalloon = true;
+            //ToolTip
+            toolTip = new TheArtOfDev.HtmlRenderer.WinForms.HtmlToolTip(); //new ToolTip();
+            //toolTip.IsBalloon = true;
+            toolTip.AllowLinksHandling = false;
 
             this.MouseMove += MouseMoveHandler;
 
@@ -370,10 +373,10 @@ namespace ReflectiveCode.GMinder.Controls
                 case GventChanges.Title:
                 case GventChanges.Description:
                 case GventChanges.Organizer:
+                case GventChanges.Location:
                     if (_Gvents.ContainsKey(gvent))
                         ItemUpdate(_Gvents[gvent]);
                     return;
-
                 case GventChanges.Status:
                     if (gvent.Status == GventStatus.Dismissed)
                         Remove(gvent);
@@ -421,7 +424,7 @@ namespace ReflectiveCode.GMinder.Controls
                         break;
                 }
 
-                item.ToolTipText = gvent.ToolTip;
+                item.ToolTipText = gvent.GetDescriptionHtml(false); //gvent.GetDescriptionText();
             }
         }
 
@@ -459,7 +462,24 @@ namespace ReflectiveCode.GMinder.Controls
             }
         }
 
-
+        public void Select(Gvent item)
+        {
+            if (item != null && Selected != item)
+            {
+                BeginUpdate();
+                foreach (ListViewItem lvitem in Items)
+                {
+                    if (GetGventFromItem(lvitem) == item)
+                    {
+                        lvitem.Selected = true;
+                        break;
+                    }
+                    else
+                        lvitem.Selected = false;
+                }
+                EndUpdate();
+            }
+        }
         #region Threadsafe Agenda Access
 
         public void SafeBeginUpdate()

@@ -976,7 +976,7 @@
     <value>3, 3</value>
   </data>
   <data name="logoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 190</value>
+    <value>180, 174</value>
   </data>
   <data name="logoPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -1068,33 +1068,6 @@
   <data name="&gt;&gt;versionLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 170</value>
-  </data>
-  <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>&amp;OK</value>
-  </data>
-  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
-    <value>okButton</value>
-  </data>
-  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
-    <value>aboutTableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="linkLatest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1105,13 +1078,13 @@
     <value>6, 0, 3, 0</value>
   </data>
   <data name="linkLatest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 13</value>
+    <value>184, 13</value>
   </data>
   <data name="linkLatest.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
   <data name="linkLatest.Text" xml:space="preserve">
-    <value>http://milow.net/public/projects/gminder.html</value>
+    <value>https://github.com/robdg80/GMinder</value>
   </data>
   <data name="&gt;&gt;linkLatest.Name" xml:space="preserve">
     <value>linkLatest</value>
@@ -1123,7 +1096,7 @@
     <value>aboutTableLayoutPanel</value>
   </data>
   <data name="&gt;&gt;linkLatest.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -1159,7 +1132,7 @@
     <value>aboutTableLayoutPanel</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="linkOlder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1189,7 +1162,7 @@
     <value>aboutTableLayoutPanel</value>
   </data>
   <data name="&gt;&gt;linkOlder.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="linkOldest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1219,7 +1192,7 @@
     <value>aboutTableLayoutPanel</value>
   </data>
   <data name="&gt;&gt;linkOldest.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="description.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1252,7 +1225,67 @@
     <value>aboutTableLayoutPanel</value>
   </data>
   <data name="&gt;&gt;description.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>488, 183</value>
+  </data>
+  <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>&amp;OK</value>
+  </data>
+  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
+    <value>okButton</value>
+  </data>
+  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
+    <value>aboutTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 160</value>
+  </data>
+  <data name="linkLabel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 3, 0</value>
+  </data>
+  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 13</value>
+  </data>
+  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>http://milow.net/public/projects/gminder.html</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
+    <value>linkLabel1</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
+    <value>aboutTableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="aboutTableLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1261,10 +1294,10 @@
     <value>9, 9</value>
   </data>
   <data name="aboutTableLayoutPanel.RowCount" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="aboutTableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>566, 196</value>
+    <value>566, 209</value>
   </data>
   <data name="aboutTableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1282,7 +1315,7 @@
     <value>0</value>
   </data>
   <data name="aboutTableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="logoPictureBox" Row="0" RowSpan="8" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="productNameLabel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="versionLabel" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="okButton" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="linkLatest" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="linkOlder" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="linkOldest" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="description" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,Percent,67" /&gt;&lt;Rows Styles="Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,40,Absolute,20,Absolute,20,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="logoPictureBox" Row="0" RowSpan="8" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="productNameLabel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="versionLabel" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="linkLatest" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="linkOlder" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="linkOldest" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="description" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="okButton" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="linkLabel1" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,Percent,67" /&gt;&lt;Rows Styles="Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,40,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1291,7 +1324,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>584, 214</value>
+    <value>584, 227</value>
   </data>
   <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>9, 9, 9, 9</value>

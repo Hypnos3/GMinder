@@ -32,13 +32,12 @@ using TheArtOfDev.HtmlRenderer.WinForms;
 using TheArtOfDev.HtmlRenderer.Core.Entities;
 using System.Text;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReflectiveCode.GMinder
 {
     public partial class GReminder : PositionalForm
     {
-        
-
         public const string REMINDER_TYPE_EMAIL = "email";
         public const string REMINDER_TYPE_SMS = "sms";
         public const string REMINDER_TYPE_POPUP = "popup";
@@ -47,7 +46,8 @@ namespace ReflectiveCode.GMinder
 
         private bool _UserExit;
         private bool _OptionsLock;
-        private ToolTip toolTip;
+        private Dictionary<string, string> layout;
+        private Dictionary<string, string> locations;
 
         private bool Hidden
         {
@@ -105,11 +105,6 @@ namespace ReflectiveCode.GMinder
         {
             InitializeComponent();            
 
-            //ToolTip
-            toolTip = new ToolTip();
-            toolTip.IsBalloon = true;
-            toolTip.ToolTipIcon = ToolTipIcon.Info;
-
             //Make sure we are not on top of any browser or dialog that happens during the authorzation
             Calendar.StartingAuth += (sender, args) => { this.TopMost = false; };
             Calendar.EndingAuth += (sender, args) => { this.TopMost = global::ReflectiveCode.GMinder.Properties.Settings.Default.OnTop; };
@@ -119,18 +114,37 @@ namespace ReflectiveCode.GMinder
                 Calendar.SetUserCredentials(false);
                 Schedule.Current.Load();
             }
-            
+
             Selected = null;
             Schedule.Current.GventChanged += (sender, e) =>
             {
                 if (e.Changes == GventChanges.Status)
                     StatusAlert(e.Gvent);
             };
+
+            LoadLocations();
+            if (this.locations != null || this.layout != null) {
+                Schedule.Current.GventAppendixChanged += ( sender, e ) => {
+                    if (this.locations != null && e.Changes == GventChanges.AddedAppendix && e.Appendix.Type == GventAppendixType.Resource) {
+                        var name = e.Appendix.Name.ToLower().Replace(" ", string.Empty).Replace(" ", string.Empty);
+                        var namepart = name.Split(new char[] { ',', '.', '-', ';', ':', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                        for (int i = 0; i < namepart.Length; i++) {
+                            if (this.locations != null && this.locations.ContainsKey(namepart[i]))
+                                e.Appendix.Url = this.locations[namepart[i]];
+                            if (this.layout != null && this.layout.ContainsKey(namepart[i]))
+                                e.Appendix.UrlLayout = this.layout[namepart[i]];
+                        }
+                    }
+                };
+            }
+
             if (Schedule.Current.Count == 0)
                 HandleTrayCalendars(null, null);
+
             UpdateStatus();
             StartCalendarRefresher();
             ApplyRefreshTimerInterval();
+
             var timer = new System.Windows.Forms.Timer();
             timer.Interval = 1;
             timer.Tick += new EventHandler(Tray);
@@ -155,7 +169,7 @@ namespace ReflectiveCode.GMinder
             base.OnFormClosing(e);
         }
 
-         private void OnFormRezize(object sender, EventArgs e)
+        private void OnFormRezize(object sender, EventArgs e)
         {
             eventTextRecalculateHeight();
         }
@@ -175,7 +189,10 @@ namespace ReflectiveCode.GMinder
             {
                 case GventStatus.Soon:
                     if (Properties.Settings.Default.SoonPopup)
+                    {
                         Hidden = false;
+                        agenda.Select(gvent);
+                    }
                     if (Properties.Settings.Default.SoonSound)
                         Sound.MakeSound(Properties.Settings.Default.SoundPath);
                     if (Properties.Settings.Default.SoonVerbal)
@@ -184,7 +201,10 @@ namespace ReflectiveCode.GMinder
 
                 case GventStatus.Now:
                     if (Properties.Settings.Default.NowPopup)
+                    {
                         Hidden = false;
+                        agenda.Select(gvent);
+                    }
                     if (Properties.Settings.Default.NowSound)
                         Sound.MakeSound(Properties.Settings.Default.SoundPath);
                     if (Properties.Settings.Default.NowVerbal)
@@ -359,140 +379,42 @@ namespace ReflectiveCode.GMinder
         
         #endregion
 
-        #region eventText
+
+        #region Event Panel and Text
         private void eventTextRecalculateHeight()
         {
-            if (eventText.AutoScrollMinSize.Height > (this.ClientSize.Height / 3))
-            {
+            if (eventText.AutoScrollMinSize.Height > ( this.ClientSize.Height / 3 )) {
                 eventText.Height = this.ClientSize.Height / 3;
                 eventText.Refresh();
             }
-            else
-            {
+            else {
                 eventText.Height = eventText.AutoScrollMinSize.Height;
                 eventText.Refresh();
             }
 
-            
+
         }
 
-        private void eventTextLinkClicked(object sender, TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs e)
+        private void eventTextLinkClicked( object sender, TheArtOfDev.HtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs e )
         {
-            try
-            {
+            try {
                 System.Diagnostics.Process.Start(e.Link);
                 e.Handled = true;
             }
-            catch (Exception ex)
-            {
-                Logging.LogException(true, ex, string.Format(Properties.Resources.ErrorOpenLink,e.Link));
+            catch (Exception ex) {
+                Logging.LogException(true, ex, string.Format(Properties.Resources.ErrorOpenLink, e.Link));
             }
         }
-        #endregion
-
-        #region Event Panel
 
         private void DisplayEventDetails( Gvent gvent )
         {
             reminderFormTableLayoutPanel.SuspendLayout();
             eventText.SuspendLayout();
             snoozeMenu.Items.Clear();
-            StringBuilder sb = new StringBuilder();
 
             if (gvent != null) {
-                // Title
-                sb.Append("<h3 style=\"display: inline\">");
-                if (string.IsNullOrEmpty(gvent.Url)) {
-                    sb.Append(gvent.Title);
-                }
-                else {
-                    sb.Append("<a href=\"");
-                    sb.Append(gvent.Url);
-                    sb.Append("\">");
-                    sb.Append(gvent.Title);
-                    sb.Append("</a>");
-                }
-                sb.Append("</h3>");
-
-                sb.Append("<br /><span style=\"font-size: small\">");
-                // Time
-                sb.Append(gvent.WhenString);
-
-                // Location
-                if (gvent.LocationResource != null) {
-                    sb.Append("<br />");
-                    if (!string.IsNullOrEmpty(gvent.LocationResource.Url)) {
-                        sb.Append("<a href=\"");
-                        sb.Append(gvent.LocationResource.Url);
-                        sb.Append("\" Title=\"");
-                        sb.Append(gvent.LocationResource.Url);
-                        sb.Append("\">");
-                        sb.Append(gvent.LocationResource.DisplayName);
-                        sb.Append("</a>");
-                    }
-                    else
-                        sb.Append(gvent.LocationResource.DisplayName);
-                    sb.Append(gvent.LocationResource.Comment);
-                }
-                else if (!string.IsNullOrEmpty(gvent.Location)) {
-                    sb.Append("<br />");
-                    sb.Append("<a href=\"");
-                    sb.Append(string.Format(Properties.Resources.GoogleMapsLink, HttpUtility.UrlEncode(gvent.Location)));
-                    sb.Append("\" Title=\"Google Maps Link\">");
-                    sb.Append(gvent.Location);
-                    sb.Append("</a>");
-                }
-
-                if (gvent.Organizer != null && !gvent.Organizer.Self) {
-                    sb.Append("<br />");
-                    sb.Append(Properties.Resources.sOrganizer);
-                    sb.Append(": ");
-                    sb.Append(gvent.Organizer.Name);
-                }
-                sb.Append("</span>");
-
-                if (!string.IsNullOrEmpty(gvent.Description)) {
-                    sb.Append("<br /><span style=\"font-size: small\">");
-                    sb.Append(gvent.Description);
-                    sb.Append("</span>");
-                }
-
-
-                if ( gvent.Attendees.Count > 0 ) {
-                    sb.Append("<br /><span style=\"font-size: x-small\">");
-                    sb.Append(Properties.Resources.sAttendees);
-                    sb.Append(": ");
-
-                    foreach (var ev in gvent.Attendees) {
-                            if (ev.Optional)
-                                sb.Append("<i>");
-
-                            //sb.Append("<a heref=\"mailto:");
-                            //sb.Append(ev.Email);
-                            //sb.Append("\" Title=\"");
-                            if (!string.IsNullOrEmpty(ev.Url)) {
-                                sb.Append("<a heref=\"");
-                                sb.Append(ev.Url);
-                                sb.Append("\" Title=\"");
-                                sb.Append(ev.DisplayName);
-                                sb.Append("\">");
-                                sb.Append(ev.Name);
-                                sb.Append("</a>, ");
-                            }
-                            else
-                                sb.Append(ev.DisplayName);
-
-                            if (ev.Optional)
-                                sb.Append("</i>");
-                        }
-                    sb.Append("</span>");
-                }
-
-                // ToolTip
-                //toolTip.ToolTipTitle = gvent.Title;
-                //toolTip.SetToolTip(eventText, gvent.ToolTip);
-
-                eventText.Text = sb.ToString();
+                //get Text
+                eventText.Text = gvent.GetDescriptionHtml(true);
 
                 //get Minimum
                 int minutes = (int)Math.Truncate(( Selected.Start - DateTime.Now ).TotalMinutes);
@@ -506,10 +428,6 @@ namespace ReflectiveCode.GMinder
             }
             else {
                 eventText.Text = Properties.Resources.EventNotSelectedText;
-
-                // ToolTip
-                //toolTip.ToolTipTitle = "";
-                //toolTip.SetToolTip(eventText, Properties.Resources.EventNotSelectedToolTip);
             }
             eventText.ResumeLayout();
             eventTextRecalculateHeight();
@@ -523,6 +441,22 @@ namespace ReflectiveCode.GMinder
             ToolStripMenuItem item = new ToolStripMenuItem(string.Format(Properties.Resources.MenuItemSnoozeText, snoozeMinutes), null, HandleSnoozeMenuItemClick);
             item.Tag = snoozeMinutes * -1;
             snoozeMenu.Items.Add(item);
+        }
+        #endregion
+
+
+        #region Meeting Rooms
+        public void LoadLocations()
+        {
+            try
+            {
+                this.layout = Storage.LoadDictionary("layouts.xml");
+                this.locations = Storage.LoadDictionary("locations.xml");
+            }
+            catch (Exception e)
+            {
+                Logging.LogException(false, e, Properties.Resources.ErrorLocationsLoad);
+            }
         }
         #endregion
 
@@ -596,7 +530,5 @@ namespace ReflectiveCode.GMinder
             using (var about = new About())
                 about.ShowDialog(this);
         }
-
-
     }
 }

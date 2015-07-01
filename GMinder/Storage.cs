@@ -29,6 +29,11 @@ using System.Reflection;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace ReflectiveCode.GMinder
 {
@@ -37,15 +42,13 @@ namespace ReflectiveCode.GMinder
     /// </summary>
     public static class Storage
     {
-        public static void AppendText(string path, string text)
+        public static void AppendText( string path, string text )
         {
 #if DEBUG
             Console.WriteLine(text);
 #endif
-            using (var stream = new IsolatedStorageFileStream(path, FileMode.Append))
-            {
-                using (var writer = new StreamWriter(stream))
-                {
+            using (var stream = new IsolatedStorageFileStream(path, FileMode.Append)) {
+                using (var writer = new StreamWriter(stream)) {
                     writer.WriteLine(text);
                     writer.Flush();
                 }
@@ -56,29 +59,31 @@ namespace ReflectiveCode.GMinder
             }
         }
 
-        public static string LoadText(string path)
+        public static string LoadText( string path )
         {
             using (var stream = new IsolatedStorageFileStream(path, FileMode.OpenOrCreate))
             using (var reader = new StreamReader(stream))
                 return reader.ReadToEnd();
         }
 
-        public static void SaveObject(string path, object value)
+        public static void SaveObject( string path, object value )
         {
             var serializer = new XmlSerializer(value.GetType());
-            using (var stream = new FileStream(GetStorageFolderPath(path), FileMode.Create))
-            {
+            using (var stream = new FileStream(GetStorageFolderPath(path), FileMode.Create)) {
                 serializer.Serialize(new XmlTextWriter(stream, Encoding.Unicode), value);
                 stream.Flush();
             }
         }
 
-        private static String GetStorageFolderPath(string path)
+        private static String GetStorageFolderPath( string path )
         {
+            var retPath = Path.Combine(Application.StartupPath, path);
+            if (File.Exists(retPath))
+                return retPath;
+
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             DirectoryInfo storageFolder = new DirectoryInfo(appDataPath + @"\GMinder");
-            if (!storageFolder.Exists)
-            {
+            if (!storageFolder.Exists) {
                 storageFolder.Create();
             }
 #if DEBUG
@@ -87,18 +92,35 @@ namespace ReflectiveCode.GMinder
             return Path.Combine(storageFolder.ToString(), path);
         }
 
-        public static T LoadObject<T>(string path)
+        public static T LoadObject<T>( string path )
         {
             var serializer = new XmlSerializer(typeof(T));
-            try
-            {
+            try {
                 using (var stream = new FileStream(GetStorageFolderPath(path), FileMode.Open))
                     return (T)serializer.Deserialize(new XmlTextReader(stream));
             }
-            catch (FileNotFoundException)
-            {
+            catch (FileNotFoundException) {
                 return default(T);
             }
         }
+
+        public static Dictionary<string, string> LoadDictionary( string path )
+        {
+            var filename = GetStorageFolderPath(path);
+            if (!File.Exists(filename))
+                return null;
+
+            return XElement.Parse(File.ReadAllText(filename))
+                            .Elements()
+                            .ToDictionary(k => k.Name.ToString(), v => v.Value.ToString());
+        }
+
+        public static void SaveDictionary( string path, Dictionary<string, string> dict )
+        {
+            var filename = GetStorageFolderPath(path);
+            new XElement("root", dict.Select(kv => new XElement(kv.Key, kv.Value)))
+                        .Save(filename, SaveOptions.OmitDuplicateNamespaces);
+        }
+
     }
 }

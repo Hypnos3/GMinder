@@ -127,7 +127,32 @@ namespace ReflectiveCode.GMinder
                     break;
             }
         }
-
+        
+        public void NotifyChange(GventAppendixEventArgs e)
+        {
+            switch (e.Changes)
+            {
+                case GventChanges.Added:
+                    OnGventAdded(e);
+                    break;
+                case GventChanges.Deleted:
+                    OnGventRemoved(e);
+                    break;
+                case GventChanges.AddedAppendix:
+                    OnGventAppendixAdded(e);
+                    break;
+                case GventChanges.DeletedAppendix:
+                    OnGventAppendixRemoved(e);
+                    break;
+                case GventChanges.UpdatedAppendix:
+                    OnGventAppendixChanged(e);
+                    break;
+                default:
+                    OnGventChanged(e);
+                    break;
+            }
+        }
+        
         #region Events
 
         public event EventHandler Redrawing;
@@ -136,6 +161,9 @@ namespace ReflectiveCode.GMinder
         public event EventHandler<GventEventArgs> GventAdded;
         public event EventHandler<GventEventArgs> GventChanged;
         public event EventHandler<GventEventArgs> GventRemoved;
+        public event EventHandler<GventAppendixEventArgs> GventAppendixAdded;
+        public event EventHandler<GventAppendixEventArgs> GventAppendixChanged;
+        public event EventHandler<GventAppendixEventArgs> GventAppendixRemoved;
 
         protected virtual void OnRedrawing(EventArgs e)
         {
@@ -166,6 +194,21 @@ namespace ReflectiveCode.GMinder
         {
             if (GventRemoved != null)
                 GventRemoved(this, e);
+        }
+        protected virtual void OnGventAppendixAdded(GventAppendixEventArgs e)
+        {
+            if (GventAppendixAdded != null)
+                GventAppendixAdded(this, e);
+        }
+        protected virtual void OnGventAppendixChanged(GventAppendixEventArgs e)
+        {
+            if (GventAppendixChanged != null)
+                GventAppendixChanged(this, e);
+        }
+        protected virtual void OnGventAppendixRemoved(GventAppendixEventArgs e)
+        {
+            if (GventAppendixRemoved != null)
+                GventAppendixRemoved(this, e);
         }
 
         #endregion

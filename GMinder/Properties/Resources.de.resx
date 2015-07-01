@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UnitHour" xml:space="preserve">
+    <value>Stunden</value>
+  </data>
+  <data name="UnitDays" xml:space="preserve">
+    <value>Tage</value>
+  </data>
+  <data name="UnitDay" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="sResources" xml:space="preserve">
+    <value>Ressourcen</value>
+  </data>
+  <data name="sResetLogin" xml:space="preserve">
+    <value>Anmeldung Zurücksetzen</value>
+  </data>
+  <data name="sLogin" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="sLocation" xml:space="preserve">
+    <value>Ort</value>
+  </data>
+  <data name="sDescription" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="sCalendar" xml:space="preserve">
+    <value>Kalender</value>
+  </data>
+  <data name="sAttendee" xml:space="preserve">
+    <value>Teilnehmer</value>
+  </data>
+  <data name="sAttendeeOptional" xml:space="preserve">
+    <value>Optionaler Teilnehmer</value>
+  </data>
+  <data name="sAttendees" xml:space="preserve">
+    <value>Teilnehmer</value>
+  </data>
+  <data name="sAttendeesOptional" xml:space="preserve">
+    <value>Optionale Teilnehmer</value>
+  </data>
+  <data name="sOrganizer" xml:space="preserve">
+    <value>Organisator</value>
+  </data>
+  <data name="MessageLoginTitle" xml:space="preserve">
+    <value>Anmelden</value>
+  </data>
+  <data name="MessageLoginSuccessTitle" xml:space="preserve">
+    <value>Erfolgreich</value>
+  </data>
+  <data name="EventNotSelectedToolTip" xml:space="preserve">
+    <value>Bitte wählen Sie zuerst ein Ereignis!</value>
+  </data>
+  <data name="EventNotSelectedText" xml:space="preserve">
+    <value>Kein Ereignis ausgewählt.</value>
+  </data>
+  <data name="ErrorLoginFirstTitle" xml:space="preserve">
+    <value>Bitte zuerst anmelden!</value>
+  </data>
+  <data name="ErrorGenericExceptionTitle" xml:space="preserve">
+    <value>In GMinder ist ein fehler aufgetreten!</value>
+  </data>
+  <data name="ErrorAccessGoogleCalendarTitle" xml:space="preserve">
+    <value>Auf das Google Calendar-Konto kann nicht zugegriffen werden.</value>
+  </data>
+  <data name="ErrorAccessGoogleCalendarText" xml:space="preserve">
+    <value>Zugriff zum Google Calendar-Konto nicht möglich. Bitte autorisieren Sie GMinder für den Zugriff auf ihren Kalender.</value>
+  </data>
+  <data name="AgendaGroupWeeks" xml:space="preserve">
+    <value>{0} Wochen</value>
+  </data>
+  <data name="AgendaGroupTomorrow" xml:space="preserve">
+    <value>Morgen</value>
+  </data>
+  <data name="AgendaGroupToday" xml:space="preserve">
+    <value>Heute</value>
+  </data>
+  <data name="AgendaGroupPast" xml:space="preserve">
+    <value>Vergangenheit</value>
+  </data>
+  <data name="AgendaGroupNextWeek" xml:space="preserve">
+    <value>Nächste Woche</value>
+  </data>
+  <data name="AgendaGroupNextMonth" xml:space="preserve">
+    <value>Nächsten Monat</value>
+  </data>
+  <data name="AgendaGroupMonths" xml:space="preserve">
+    <value>{0} Monate</value>
+  </data>
+  <data name="AgendaGroupDays" xml:space="preserve">
+    <value>{0} Tage</value>
+  </data>
+  <data name="AgendaColumnWhen" xml:space="preserve">
+    <value>Wann</value>
+  </data>
+  <data name="AgendaColumnWhat" xml:space="preserve">
+    <value>Was</value>
+  </data>
+  <data name="MessageLoginText" xml:space="preserve">
+    <value>Ein Web-Browser wird jetzt geöffnet werden, damit Sie GMinder-Zugang zu Ihrem Kalender gewähren können.</value>
+  </data>
+  <data name="MessageLoginSuccessText" xml:space="preserve">
+    <value>Der Kontozugriff war erfolgreich.</value>
+  </data>
+  <data name="sDownload" xml:space="preserve">
+    <value>Herunterladen</value>
+  </data>
+  <data name="sDownloading" xml:space="preserve">
+    <value>lade ...</value>
+  </data>
+  <data name="sAllDay" xml:space="preserve">
+    <value>Ganztägig</value>
+  </data>
+  <data name="ErrorLoginFirstText" xml:space="preserve">
+    <value>Sie müssen sich zuerst anmelden um GMinder Zugriff auf Ihren Google Kalender zu ermöglichen.</value>
+  </data>
+  <data name="MenuItemSnoozeText" xml:space="preserve">
+    <value>Schlimmern bis {0} min vor Beginn</value>
+  </data>
+</root>

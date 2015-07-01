@@ -286,4 +286,19 @@ Please go to Options and select a valid sound file.</value>
   <data name="ErrorUnknownMain" xml:space="preserve">
     <value>An Unknown Error is occured. Please feel free to inform Developer!</value>
   </data>
+  <data name="ErrorLocationsLoad" xml:space="preserve">
+    <value>Unable to load saved locations</value>
+  </data>
+  <data name="ErrorLocationsSave" xml:space="preserve">
+    <value>Unable to save locations</value>
+  </data>
+  <data name="sLinkGoogleMap" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="sLinkLayout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="sLinkLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
 </root>
