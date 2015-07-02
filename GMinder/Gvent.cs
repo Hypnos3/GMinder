@@ -653,16 +653,15 @@ namespace ReflectiveCode.GMinder
                 Resources.Sort();
             }
 
-            foreach (var attendee in Attendees)
-                if (!attendee.Processed)
-                    RemoveAttendee(attendee);
+            for (int i = Attendees.Count -1; i >0; i--)
+                if (!Attendees[i].Processed)
+                    RemoveAttendee(Attendees[i]);
 
-            foreach (var resource in Resources)
-                if (!resource.Processed)
-                    RemoveResource(resource);
+            for (int i = Resources.Count - 1; i > 0; i--)
+                if (!Resources[i].Processed)
+                    RemoveResource(Resources[i]);
 
             // Times
-
             if (entry.Start.DateTime == null)
             {
                 Start = DateTime.Parse(entry.Start.Date);
