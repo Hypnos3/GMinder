@@ -25,12 +25,9 @@
 using System;
 using System.Text;
 using System.Windows.Forms;
-
-#if DEBUG
-using System.Diagnostics;
 using System.IO.IsolatedStorage;
 using System.IO;
-#endif
+using System.Diagnostics;
 
 namespace ReflectiveCode.GMinder
 {
