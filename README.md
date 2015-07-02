@@ -1,7 +1,7 @@
 # GMinder
 GMinder - Desktop Reminder for Google Calendar
 
-http://milow.net/public/projects/gminder.html
+This is an Enhancement of the GMinder from http://milow.net/public/projects/gminder.html. 
 
 ### Prerequisites
   * Visual Studio Express 2013
